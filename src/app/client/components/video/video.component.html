@@ -3,18 +3,23 @@
       <h2 class="logo">Your Logo</h2>
       <div class="toggle">aaaaaaaaaa</div>
     </div> -->
-  <video src="/assets/videos/{{videoName | defaultVideo}}" muted loop autoplay class="video"></video>
+  <video
+    src="/assets/videos/{{ videoName | defaultVideo }}"
+    muted
+    loop
+    autoplay
+    class="video"
+  ></video>
   <div class="overlay"></div>
   <div class="text">
-    <h2>Be Stronger</h2>
-    <h3>Never give up</h3>
+    <!-- <h2>{{ title }}</h2>
+    <h3>{{ subTitle }}</h3>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
-      exercitationem. Sequi alias iusto minus dicta enim vitae accusantium quas
-      obcaecati qui odit quod error quam, illum quisquam explicabo, inventore
-      tenetur.
+      {{ description }}
     </p>
-    <a href="#">Join us</a>
+    <div *ngIf="joinUs">
+      <a href="#">Join us</a>
+    </div> -->
     <!-- <ul class="sci">
         <li><a href="#"><img src="facebook.png"></a></li>
         <li><a href="#"><img src="facebook.png"></a></li>
