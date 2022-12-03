@@ -5,11 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material/material.module';
 import { HomeComponent } from './pages/home/home.component';
 import { VideoComponent } from './components/video/video.component';
+import { DefaultVideoPipe } from './pipes/default-video.pipe';
 
 @NgModule({
   declarations: [
     HomeComponent,
     VideoComponent,
+    DefaultVideoPipe,
   ],
   exports:[],
   imports: [
