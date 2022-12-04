@@ -15,25 +15,27 @@
   box-sizing: border-box;
 }
 
-.navbar a {
+.navbar .link {
   color: rgb(224, 222, 222);
 
   text-decoration: none;
   font-weight: 600;
 }
-.navbar a:hover{
+.navbar .link:hover {
   color: white;
 }
 
 .navbar .logo {
   font-size: 2em;
+  text-decoration: none;
   font-weight: bold;
+  color: white;
 }
 
-// .navbar .navLinks{
-//     display: flex;
-//     align-items: center;
-// }
+.navbar .navLinks {
+  display: flex;
+  align-items: center;
+}
 
 .navbar .navLinks ul {
   display: flex;
@@ -43,7 +45,7 @@
 .navbar .navLinks ul li {
   margin: 0 25px;
   font-size: 1.5em;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .navbar .menuIcon {
@@ -55,18 +57,43 @@
   font-size: 2rem;
 }
 
+.joinButton {
+  background-color: rgba(255, 255, 255, 0.777);
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 25px;
+  color: rgba(0, 0, 0, 0.835);
+  border: none;
+  font-size: 1em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 600;
+}
+.joinButton:hover {
+  background-color: white;
+  box-shadow: 0px 12px 30px 0px rgba(128, 127, 127, 0.34);
+}
+@media screen and (max-width: 1250px) {
+  .navbar .logo{
+    font-size: 1.5em;
+  }
+  .navbar .navLinks ul li {
+    font-size: 1.3em;
+    margin: 0 12px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .navbar {
     padding: 0;
   }
-  .navbar a {
+  .navbar .link {
     color: white;
-  
   }
-  .navbar .logo{
+  .navbar .logo {
     position: absolute;
     top: 50px;
     left: 50px;
+    font-size: 2em;
   }
 
   .navbar .menuIcon {
@@ -76,7 +103,7 @@
     top: 0;
     left: 0;
     position: absolute;
-    background-color: rgba(255,255,255,0.20);
+    background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(7px);
     width: 100%;
     height: 100vh;
@@ -87,11 +114,11 @@
     transition: all 0.6s ease;
   }
 
-  .navLinks.mobile-menu{
+  .navLinks.mobile-menu {
     margin-left: 0;
   }
 
-  .navLinks ul{
+  .navLinks ul {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,7 +126,6 @@
   .navbar .navLinks ul li {
     margin: 25px 0;
     font-size: 1.4em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   }
-  
 }
