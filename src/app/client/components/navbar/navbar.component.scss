@@ -16,9 +16,13 @@
 }
 
 .navbar a {
-  color: white;
+  color: rgb(224, 222, 222);
 
   text-decoration: none;
+  font-weight: 600;
+}
+.navbar a:hover{
+  color: white;
 }
 
 .navbar .logo {
@@ -38,6 +42,8 @@
 
 .navbar .navLinks ul li {
   margin: 0 25px;
+  font-size: 1.5em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .navbar .menuIcon {
@@ -52,6 +58,10 @@
 @media screen and (max-width: 900px) {
   .navbar {
     padding: 0;
+  }
+  .navbar a {
+    color: white;
+  
   }
   .navbar .logo{
     position: absolute;
@@ -89,6 +99,7 @@
   .navbar .navLinks ul li {
     margin: 25px 0;
     font-size: 1.4em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   
 }
