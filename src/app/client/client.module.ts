@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { VideoComponent } from './components/video/video.component';
 import { DefaultVideoPipe } from './pipes/default-video.pipe';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,14 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     VideoComponent,
     DefaultVideoPipe,
     NavbarComponent,
+    AboutUsComponent,
   ],
   exports:[],
   imports: [
     CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ]
 })
 export class ClientModule { }
