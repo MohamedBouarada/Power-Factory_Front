@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    var textarr = ['Be Stronger', 'Make It Happen ', 'Shock Everyone'];
+    var textarr = ['Be Stronger','Fitness First', 'Make It Happen ', 'Shock Everyone'];
     var index = 0;
 
     setInterval(() => {
