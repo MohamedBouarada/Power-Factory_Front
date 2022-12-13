@@ -8,6 +8,7 @@ import { VideoComponent } from './components/video/video.component';
 import { DefaultVideoPipe } from './pipes/default-video.pipe';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     DefaultVideoPipe,
     NavbarComponent,
     AboutUsComponent,
+    BlogsComponent,
   ],
   exports:[],
   imports: [
