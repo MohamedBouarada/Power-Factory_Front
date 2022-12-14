@@ -15,7 +15,7 @@ export class BlogsComponent implements OnInit {
     pullDrag: true,
     dots: false,
     navSpeed: 700,
-    navText: ['<mat-icon>arrow_left</mat-icon>', '<mat-icon >arrow_right</mat-icon>'],
+    navText: ['<i class="fa fa-caret-left"></i>', '<i class="fa fa-caret-right"></i>'],
     responsive: {
       0: {
         items: 1

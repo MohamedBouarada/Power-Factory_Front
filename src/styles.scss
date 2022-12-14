@@ -1,4 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.policy-product .owl-prev,
+.policy-product .owl-next {
+  background: rgb(158 158 158 / 28%) !important;
+  color: #00268f !important;
+  height: 60px !important ;
+  width: 60px !important;
+  border-radius: 50% !important;
+  position: absolute;
+  top: 50%;
+  transition: all 0.3s ease;
+}
+.policy-product .owl-prev:hover,
+.policy-product .owl-next:hover {
+  background: #041b59 !important;
+  color: #fff !important;
+}
+.policy-product .owl-prev {
+  left: -8px;
+  transform: translate(-50%, -50%);
+}
+.policy-product .owl-next {
+  right: -78px;
+  transform: translate(-50%, -50%);
+}
+.policy-product .owl-prev i,
+.policy-product .owl-next i {
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
