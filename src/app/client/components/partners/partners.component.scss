@@ -21,3 +21,9 @@
 .partners img:hover{
   box-shadow: 0 0 10px 1px #dbdbdb;
 }
+@media screen and (max-width: 700px) {
+  .partners img{
+    height: 150px;
+  
+  }
+}

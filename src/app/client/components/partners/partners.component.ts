@@ -23,7 +23,7 @@ export class PartnersComponent implements OnInit {
       0: {
         items: 1
       },
-      400: {
+      300: {
         items: 2
       },
       740: {
