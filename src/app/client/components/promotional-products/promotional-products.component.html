@@ -1,9 +1,6 @@
 <section class="promo-products">
   <div class="containers">
-    <div class="title">
-      <p>The Best Seller Of Hitheme</p>
-      <h2><span>Best</span> Seller</h2>
-    </div>
+    <app-title description="The Best Seller Of Hitheme" title1="Best" title2="Seller" ></app-title>
       <owl-carousel-o [options]="customOptions" class="carousel">
         <ng-template carouselSlide *ngFor="let product of this.listOfProducts" >
           <div class="card">

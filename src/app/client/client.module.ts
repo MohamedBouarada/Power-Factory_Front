@@ -12,6 +12,8 @@ import { BlogsComponent } from './components/blogs/blogs.component';
 import { PartnersComponent } from './components/partners/partners.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { PromotionalProductsComponent } from './components/promotional-products/promotional-products.component';
+import { TitleComponent } from './components/title/title.component';
+import { MethodsComponent } from './components/methods/methods.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { PromotionalProductsComponent } from './components/promotional-products/
     BlogsComponent,
     PartnersComponent,
     PromotionalProductsComponent,
+    TitleComponent,
+    MethodsComponent,
   ],
   exports:[],
   imports: [
