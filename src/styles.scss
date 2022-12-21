@@ -9,10 +9,23 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+:root {
+  --blue-dark: #041b59;
+  --blue-1: #015c92;
+  --blue-2: #2d82b5;
+  --blue-3: #58b3eb;
+  --blue-4: #88cdf6;
+  --blue-5: #bce6ff;
+  --yellow: #f8d90f;
+  --light-green: #d3dd18;
+  --orange: #fe7a15;
+  --red: #ee6c4d;
+}
+
 .policy-product .owl-prev,
 .policy-product .owl-next {
   background: rgb(158 158 158 / 28%) !important;
-  color: #00268f !important;
+  color: var(--blue-1) !important;
   height: 60px !important ;
   width: 60px !important;
   border-radius: 50% !important;
@@ -22,8 +35,11 @@ body {
 }
 .policy-product .owl-prev:hover,
 .policy-product .owl-next:hover {
-  background: #041b59 !important;
+  background: var(--blue-1) !important;
   color: #fff !important;
+  i {
+    font-size: 40px !important;
+  }
 }
 .policy-product .owl-prev {
   left: -8px;
@@ -39,29 +55,30 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  transition: all 0.3s ease;
   transform: translate(-50%, -50%);
 }
-
 
 //promo-products
 
 .promo-products .owl-prev,
-.promo-products .owl-next{
-  width: 30px!important;
-  margin: 10px 40px 0!important;
+.promo-products .owl-next {
+  width: 30px !important;
+  margin: 10px 40px 0 !important;
   transition: all 0.3s ease;
   background: rgb(158 158 158 / 28%) !important;
-  color: #00268f !important;
-} 
+  color: var(--blue-1) !important;
+}
 .promo-products .owl-prev:hover,
 .promo-products .owl-next:hover {
-  background: #041b59 !important;
+  background: var(--blue-1) !important;
   color: #fff !important;
+  transform: scale(1.2);
+  box-shadow: 0px 12px 30px 0px rgba(128, 127, 127, 0.532);
 }
 .promo-products .owl-prev i,
 .promo-products .owl-next i {
   font-size: 20px;
-  
 }
 @media screen and (max-width: 700px) {
   .policy-product .owl-prev,
@@ -76,12 +93,18 @@ body {
   .policy-product .owl-next {
     right: -48px;
   }
+  .policy-product .owl-prev:hover,
+  .policy-product .owl-next:hover {
+    i {
+      font-size: 30px !important;
+    }
+  }
 
-//promo-products
+  //promo-products
 
-.promo-products .owl-prev,
-.promo-products .owl-next{
-  width: 30px!important;
-  margin: 10px 30px 0!important;
-}
+  .promo-products .owl-prev,
+  .promo-products .owl-next {
+    width: 30px !important;
+    margin: 10px 30px 0 !important;
+  }
 }

@@ -11,7 +11,7 @@ export class PromotionalProductsComponent implements OnInit {
     {
       name: 'Incidid Tongue Bar',
       discount: -9,
-      principaleImage: '/assets/images/post-3.jpg',
+      principaleImage: '/assets/images/products/prod-1.webp',
       otherImages: [
         '/assets/images/post-3.jpg',
         '/assets/images/post-4.jpg',
@@ -24,7 +24,7 @@ export class PromotionalProductsComponent implements OnInit {
     {
       name: 'Incidid Tongue Bar',
       discount: -9,
-      principaleImage: '/assets/images/post-3.jpg',
+      principaleImage: '/assets/images/products/prod-2.webp',
       otherImages: [
         '/assets/images/post-6.jpg',
         '/assets/images/post-4.jpg',
@@ -37,7 +37,7 @@ export class PromotionalProductsComponent implements OnInit {
     {
       name: 'Incidid Tongue Bar',
       discount: -9,
-      principaleImage: '/assets/images/post-3.jpg',
+      principaleImage: '/assets/images/products/prod-3.webp',
       otherImages: [
         '/assets/images/post-3.jpg',
         '/assets/images/post-4.jpg',
@@ -50,7 +50,7 @@ export class PromotionalProductsComponent implements OnInit {
     {
       name: 'Incidid Tongue Bar',
       discount: -9,
-      principaleImage: '/assets/images/post-6.jpg',
+      principaleImage: '/assets/images/products/prod-4.jpeg',
       otherImages: [
         '/assets/images/post-3.jpg',
         '/assets/images/post-4.jpg',
@@ -63,7 +63,7 @@ export class PromotionalProductsComponent implements OnInit {
     {
       name: 'Incidid Tongue Bar',
       discount: -9,
-      principaleImage: '/assets/images/post-6.jpg',
+      principaleImage: '/assets/images/products/prod-5.jpeg',
       otherImages: [
         '/assets/images/post-3.jpg',
         '/assets/images/post-4.jpg',
@@ -76,7 +76,7 @@ export class PromotionalProductsComponent implements OnInit {
     {
       name: 'Incidid Tongue Bar',
       discount: -9,
-      principaleImage: '/assets/images/post-6.jpg',
+      principaleImage: '/assets/images/products/prod-6.jpeg',
       otherImages: [
         '/assets/images/post-3.jpg',
         '/assets/images/post-4.jpg',

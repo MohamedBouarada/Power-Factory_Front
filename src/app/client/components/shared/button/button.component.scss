@@ -1,0 +1,29 @@
+.btn {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 0;
+    display: block;
+    background: var(--blue-1);
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    border-radius: 10px;
+    // width: 50%;
+    // margin: 0 auto;
+  }
+  .btn .icon {
+    margin-left: 4px;
+    position: absolute;
+    transition: all 0.6s ease;
+    top: 23%;
+  }
+  .btn:hover {
+    background: var(--blue-2);
+    color: #fff;
+    box-shadow: 0px 12px 30px 0px rgba(128, 127, 127, 0.34);
+  }
+  .btn:hover .icon {
+    margin-left: 10px;
+  }

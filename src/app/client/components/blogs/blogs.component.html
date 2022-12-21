@@ -22,7 +22,7 @@
       <div class="col-md-4">
         <div class="policy-card">
           <div class="round">
-            <mat-icon class="round-icon" > phone_in_talk </mat-icon>
+            <mat-icon class="round-icon"> phone_in_talk </mat-icon>
           </div>
           <h2>Online support 24/24</h2>
           <p>We support online 24/24 on a day</p>
@@ -33,35 +33,28 @@
 </section>
 <section class="policy-product">
   <div class="containers">
-    <owl-carousel-o [options]="customOptions" class="carousel">
-      
-      <ng-template carouselSlide >
+    <owl-carousel-o [options]="customOptions" class="carousel" >
+      <ng-template carouselSlide *ngFor="let blog of this.blogsList">
         <div class="policy-p-card">
           <div class="date">
-            <h3>25</h3>
-            <h4>Jun</h4>
+            <h3>{{blog.day}} </h3>
+            <h4>{{blog.month}}</h4>
           </div>
           <div class="policy-img">
             <img
-              src="/assets/images/blogs/post-1.jpg"
+              src="{{blog.image}}"
               class="policy-img"
               alt="p1"
             />
           </div>
-          <h2>Lorem ipsum, dolor sit</h2>
-          <p>
-            amet consectetur adipisicing elit. Similique, illo! Enim excepturi
-            ullam perspiciatis. Modi reprehenderit unde laborum. Corporis
-            numquam mollitia quasi facere amet ipsam voluptatem consequatur,
-            perspiciatis aperiam veritatis. numquam mollitia quasi facere amet
-            ipsam voluptatem consequatur, perspiciatis aperiam veritatis.
+          <h2>{{blog.title}} </h2>
+          <p> 
+            {{blog.description.substring(0,340)}} ...
           </p>
-          <a href="" class="read-more"
-            >Read More <mat-icon class="arrow-icon">arrow_right</mat-icon></a
-          >
+          <app-button btnName="Read More" iconName="arrow_right"></app-button>
         </div>
       </ng-template>
-      <ng-template carouselSlide >
+      <!-- <ng-template carouselSlide>
         <div class="policy-p-card">
           <div class="date">
             <h3>25</h3>
@@ -82,9 +75,7 @@
             perspiciatis aperiam veritatis. numquam mollitia quasi facere amet
             ipsam voluptatem consequatur, perspiciatis aperiam veritatis.
           </p>
-          <a href="" class="read-more"
-            >Read More <mat-icon class="arrow-icon">arrow_right</mat-icon></a
-          >
+          <app-button btnName="Read More" iconName="arrow_right"></app-button>
         </div>
       </ng-template>
       <ng-template carouselSlide
@@ -105,10 +96,7 @@
             ipsam voluptatem consequatur, perspiciatis aperiam veritatis.
           </p>
 
-          <a href="" class="read-more"
-            >Read More
-            <mat-icon class="arrow-icon">arrow_right</mat-icon>
-          </a>
+          <app-button btnName="Read More" iconName="arrow_right"></app-button>
         </div>
       </ng-template>
       <ng-template carouselSlide>
@@ -132,11 +120,9 @@
             perspiciatis aperiam veritatis. numquam mollitia quasi facere amet
             ipsam voluptatem consequatur, perspiciatis aperiam veritatis.
           </p>
-          <a href="" class="read-more"
-            >Read More <mat-icon class="arrow-icon">arrow_right</mat-icon></a
-          >
+          <app-button btnName="Read More" iconName="arrow_right"></app-button>
         </div>
-      </ng-template>
+      </ng-template> -->
     </owl-carousel-o>
     <!-- <div class="row">
       <div class="col-md-4">
@@ -160,9 +146,7 @@
             perspiciatis aperiam veritatis. numquam mollitia quasi facere amet
             ipsam voluptatem consequatur, perspiciatis aperiam veritatis.
           </p>
-          <a href="" class="read-more"
-            >Read More <mat-icon class="arrow-icon">arrow_right</mat-icon></a
-          >
+          <app-button btnName="Read More" iconName="arrow_right"></app-button>
         </div>
       </div>
       <div class="col-md-4">
@@ -210,9 +194,7 @@
             perspiciatis aperiam veritatis. numquam mollitia quasi facere amet
             ipsam voluptatem consequatur, perspiciatis aperiam veritatis.
           </p>
-          <a href="" class="read-more"
-            >Read More <mat-icon class="arrow-icon">arrow_right</mat-icon></a
-          >
+          <app-button btnName="Read More" iconName="arrow_right"></app-button>
         </div>
       </div>
     </div> -->
