@@ -7,14 +7,19 @@
 }
 .navbar {
   color: rgb(255, 255, 255);
-  padding: 50px;
+  padding: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
 }
-
+.image{
+  margin-left: 50px;
+}
+.image img{
+  width: 300px;
+}
 .navbar .link {
   color: rgb(240, 239, 239);
 
@@ -80,9 +85,15 @@
     font-size: 1.3em;
     margin: 0 12px;
   }
+  .image{
+    margin-left: 0px;
+  }
+  .image img{
+    width: 250px;
+  }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   .navbar {
     padding: 0;
   }
@@ -127,5 +138,14 @@
     margin: 25px 0;
     font-size: 1.4em;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  .image{
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    
+  }
+  .image img{
+    width: 200px;
   }
 }
