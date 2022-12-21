@@ -15,6 +15,7 @@ import { PromotionalProductsComponent } from './components/promotional-products/
 import { TitleComponent } from './components/shared/title/title.component';
 import { MethodsComponent } from './components/methods/methods.component';
 import { ButtonComponent } from './components/shared/button/button.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ButtonComponent } from './components/shared/button/button.component';
     TitleComponent,
     MethodsComponent,
     ButtonComponent,
+    FooterComponent,
   ],
   exports:[],
   imports: [
