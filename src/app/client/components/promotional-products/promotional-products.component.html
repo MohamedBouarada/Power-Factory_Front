@@ -8,14 +8,14 @@
               <div class="discount">{{ product.discount }}%</div>
               <div class="label label-green">Pre-order</div>
               <div class="product-container">
-                <div
+                <!-- <div
                   class="p"
                   (mouseover)="imageChange($event, product)"
                   (mouseleave)="getFirstImage(product)"
                   *ngFor="let image of product.otherImages"
                 >
                   <img src="{{ image }}" alt="Product" />
-                </div>
+                </div> -->
               </div>
               <div class="image">
                 <img src="{{ product.principaleImage }}" alt="Product" />
