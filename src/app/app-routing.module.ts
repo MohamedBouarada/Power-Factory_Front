@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './client/pages/home/home.component';
+import {ProductComponent} from "./store/product/product.component";
+import {ProductListComponent} from "./store/product-list/product-list.component";
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'store', component: ProductListComponent},
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 

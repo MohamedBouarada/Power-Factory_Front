@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ClientModule } from './client/client.module';
+import {StoreModule} from "./store/store.module";
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ClientModule } from './client/client.module';
     BrowserAnimationsModule,
     MaterialModule,
     ClientModule,
+    StoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
