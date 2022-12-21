@@ -9,7 +9,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class PromotionalProductsComponent implements OnInit {
   listOfProducts: PromotionalProductsInterface[] = [
     {
-      name: 'Incidid Tongue Bar',
+      name: 'Whey XT',
       discount: -9,
       principaleImage: '/assets/images/products/prod-1.webp',
       otherImages: [
@@ -22,7 +22,7 @@ export class PromotionalProductsComponent implements OnInit {
       newPrice: 81,
     },
     {
-      name: 'Incidid Tongue Bar',
+      name: 'Whey HT 2.0',
       discount: -9,
       principaleImage: '/assets/images/products/prod-2.webp',
       otherImages: [
@@ -35,7 +35,7 @@ export class PromotionalProductsComponent implements OnInit {
       newPrice: 81,
     },
     {
-      name: 'Incidid Tongue Bar',
+      name: 'Whey Blade Pro ',
       discount: -9,
       principaleImage: '/assets/images/products/prod-3.webp',
       otherImages: [
@@ -48,7 +48,7 @@ export class PromotionalProductsComponent implements OnInit {
       newPrice: 81,
     },
     {
-      name: 'Incidid Tongue Bar',
+      name: 'Pack Essentiels',
       discount: -9,
       principaleImage: '/assets/images/products/prod-4.jpeg',
       otherImages: [
@@ -61,7 +61,7 @@ export class PromotionalProductsComponent implements OnInit {
       newPrice: 81,
     },
     {
-      name: 'Incidid Tongue Bar',
+      name: '100% Whey Protein Professional',
       discount: -9,
       principaleImage: '/assets/images/products/prod-5.jpeg',
       otherImages: [
@@ -74,7 +74,7 @@ export class PromotionalProductsComponent implements OnInit {
       newPrice: 81,
     },
     {
-      name: 'Incidid Tongue Bar',
+      name: 'Twix Hi-Protein Powder',
       discount: -9,
       principaleImage: '/assets/images/products/prod-6.jpeg',
       otherImages: [
