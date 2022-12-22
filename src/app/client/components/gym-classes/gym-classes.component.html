@@ -7,31 +7,40 @@
 </section>
 <section class="classes">
   <div class="containers">
-    <div class="card">
+    <div
+      class="card"
+      *ngFor="
+        let class of this.listOfClasses | slice : 0 : this.numberOfClassesShown
+      "
+    >
       <div class="card-image">
-        <img src="/assets/images/post-6.jpg" alt="class" />
+        <img src="{{ class.image }}" alt="class" />
       </div>
       <div class="card-info">
         <div class="date">
           <div class="day">
             <mat-icon class="date-icon">calendar_today</mat-icon>
-            Nov 12 2021
+            {{ class.date }}
           </div>
           <div class="time">
             <mat-icon class="date-icon">watch_later</mat-icon>
-            5:30 PM
+            {{ class.time }}
           </div>
         </div>
-        <h1 class="card-title">aaaaaassllad,zdz</h1>
+        <h1 class="card-title">{{ class.title }}</h1>
         <p class="text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa placeat
-          corrupti temporibus facilis dolorum porro fugit, facere sint neque in
-          iure dolores culpa est. Velit autem atque omnis perspiciatis mollitia?
+          {{ class.description }}
         </p>
         <div class="btnContainer">
           <app-button btnName="Join Class" iconName="arrow_right"></app-button>
         </div>
       </div>
+    </div>
+    <div class="btn-cont">
+      <button mat-fab extended (click)="showMoreClasses()" class="show-btn">
+        {{showMore ? 'Show Less' : 'Show More'}}
+        <mat-icon>{{showMore ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon>
+      </button>
     </div>
   </div>
 </section>

@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
 .title {
+  margin-top: 20px;
   background: white;
   padding: 10px 0;
   font-family: "Roboto", sans-serif;
@@ -22,6 +23,7 @@
   align-items: center;
   border-radius: 20px;
   margin: 10px;
+  margin-bottom: 30px;
 }
 .card-image {
   width: 30%;
@@ -76,6 +78,7 @@
   font-size: 2.5rem;
   margin: 1.5rem 0 2rem;
   text-transform: uppercase;
+  font-weight: 600;
 }
 .text {
   margin-bottom: 3rem;
@@ -88,6 +91,22 @@
   position: absolute;
   right: 2rem;
   bottom: 2rem;
+}
+.btn-cont{
+  width: 100%;
+  text-align: center;
+}
+.show-btn{
+  width: 200px;
+  font-size: 1.3rem;
+  color: white;
+  background-color: var(--blue-1);
+  transition: all .4s ease;
+  
+}
+.show-btn:hover{
+  transform: scale(1.1);
+  background-color: #e0836b;
 }
 @media screen and (max-width: 1300px) {
   .card-image {
@@ -119,16 +138,21 @@
     padding: 2.5rem;
     flex-direction: column;
     margin: 0;
+    margin-bottom: 70px;
   }
   .card-image {
     width: 100%;
-    transform: translate(0, -6rem);
+    transform: translate(0, -5.5rem);
   }
   .card-title {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
   .text {
     font-size: 1.2rem;
+  }
+  .show-btn:hover{
+    transform: scale(1);
+    background-color: var(--blue-1);
   }
 }
 @media screen and (max-width: 500px) {
@@ -138,7 +162,7 @@
   }
   .card {
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     box-shadow: 0.5rem 0.5rem 3rem 1px rgba(0, 0, 0, 0.344);
   }
   .card-image {
@@ -146,7 +170,8 @@
     transform: translate(0, -4rem);
   }
   .card-title {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
     color: var(--blue-1);
   }
   .text {
