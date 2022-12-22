@@ -16,6 +16,9 @@ import { TitleComponent } from './components/shared/title/title.component';
 import { MethodsComponent } from './components/methods/methods.component';
 import { ButtonComponent } from './components/shared/button/button.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProgramsComponent } from './pages/programs/programs.component';
+import { ClientRoutingModule } from './client-routing.module';
+import { DefaultLandingImagePipe } from './pipes/default-landing-image.pipe';
 
 @NgModule({
   declarations: [
@@ -31,14 +34,17 @@ import { FooterComponent } from './components/footer/footer.component';
     MethodsComponent,
     ButtonComponent,
     FooterComponent,
+    ProgramsComponent,
+    DefaultLandingImagePipe,
   ],
-  exports:[],
+  exports:[NavbarComponent,FooterComponent],
   imports: [
     CommonModule,
-    AppRoutingModule,
+    
     BrowserAnimationsModule,
     MaterialModule,
-    CarouselModule
+    CarouselModule,
+    ClientRoutingModule
   ]
 })
 export class ClientModule { }

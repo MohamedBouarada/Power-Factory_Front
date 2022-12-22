@@ -3,6 +3,7 @@
       <h2 class="logo">Your Logo</h2>
       <div class="toggle">aaaaaaaaaa</div>
     </div> -->
+    <div *ngIf="this.videoName.endsWith(this.mp4)">
   <video
     src="/assets/videos/{{ videoName | defaultVideo }}"
     muted
@@ -10,6 +11,11 @@
     autoplay
     class="video"
   ></video>
+  
+  </div>
+  <div *ngIf="!this.videoName.endsWith(this.mp4)">
+    <img src="/assets/videos/{{videoName | defaultLandingImage }}" class="video"/>
+  </div>
   <div class="overlay"></div>
   <div class="text">
     <h2>{{ title }}</h2>
@@ -26,4 +32,5 @@
         <li><a href="#"><img src="facebook.png"></a></li>
       </ul> -->
   </div>
+  
 </section>

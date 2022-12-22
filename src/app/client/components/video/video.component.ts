@@ -11,7 +11,7 @@ export class VideoComponent implements OnInit {
   @Input() subTitle!: string;
   @Input() description!: string;
   @Input() joinUs!: boolean;
-
+  mp4:string=".mp4";
   defaultVideoName:string="bg.mp4";
   constructor() { }
 

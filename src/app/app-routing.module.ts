@@ -4,8 +4,8 @@ import { HomeComponent } from './client/pages/home/home.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: '**', redirectTo: '/', pathMatch: 'full' },
+  // { path: '', component: HomeComponent },
+  // { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 
 @NgModule({
