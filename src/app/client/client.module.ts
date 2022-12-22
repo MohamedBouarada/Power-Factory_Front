@@ -19,6 +19,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProgramsComponent } from './pages/programs/programs.component';
 import { ClientRoutingModule } from './client-routing.module';
 import { DefaultLandingImagePipe } from './pipes/default-landing-image.pipe';
+import { GymClassesComponent } from './components/gym-classes/gym-classes.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { DefaultLandingImagePipe } from './pipes/default-landing-image.pipe';
     FooterComponent,
     ProgramsComponent,
     DefaultLandingImagePipe,
+    GymClassesComponent,
   ],
   exports:[NavbarComponent,FooterComponent],
   imports: [
