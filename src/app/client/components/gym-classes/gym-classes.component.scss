@@ -1,5 +1,10 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
+.title {
+  background: white;
+  padding: 10px 0;
+  font-family: "Roboto", sans-serif;
+}
 .classes {
   width: 100%;
 }
@@ -56,12 +61,17 @@
   color: var(--red);
   font-size: 1.6rem;
   font-weight: 600;
+  transition: all .3s ease;
+}
+.day:hover,.time:hover{
+    font-size: 1.8rem;
+    cursor: pointer;
 }
 .date-icon {
   color: var(--red);
 }
 
-.title {
+.card-title {
   color: var(--blue-dark);
   font-size: 2.5rem;
   margin: 1.5rem 0 2rem;
@@ -88,29 +98,69 @@
   .card-info {
     width: 100%;
   }
-  .title {
+  .card-title {
     font-size: 2rem;
   }
 }
 @media screen and (max-width: 950px) {
-  .title {
+  .card-title {
     font-size: 1.6rem;
   }
   .day,
   .time {
     font-size: 1.3rem;
-}
+  }
 }
 @media screen and (max-width: 790px) {
+    .day:hover,.time:hover{
+        font-size: 1.6rem;
+    }
   .card {
     padding: 2.5rem;
     flex-direction: column;
+    margin: 0;
   }
   .card-image {
     width: 100%;
-    transform: translate(0, 0.1rem);
+    transform: translate(0, -6rem);
   }
-  .title {
-    margin-top: auto;
+  .card-title {
+    font-size: 1.4rem;
+  }
+  .text {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .containers {
+    width: 95%;
+    margin: 50px auto;
+  }
+  .card {
+    margin: 0;
+    margin-bottom: 20px;
+    box-shadow: 0.5rem 0.5rem 3rem 1px rgba(0, 0, 0, 0.344);
+  }
+  .card-image {
+    width: 100%;
+    transform: translate(0, -4rem);
+  }
+  .card-title {
+    font-size: 1.3rem;
+    color: var(--blue-1);
+  }
+  .text {
+    font-size: 1.1rem;
+  }
+  .date {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .day,
+  .time {
+    display: block;
+    color: var(--red);
+    font-size: 1.6rem;
+    font-weight: 600;
   }
 }
