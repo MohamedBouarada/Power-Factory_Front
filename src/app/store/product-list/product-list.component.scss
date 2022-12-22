@@ -1,18 +1,37 @@
 .container{
- // height: 100vh;
-  //width: 100%;
+  width: 100%;
   margin-top: 20px;
-  margin-left: 5px;
-  margin-right:5px;
-  display: flex;
- // flex-direction: row;
-  //justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 5px;
-
 }
 
 .child{
-  flex: 5 0 24%;
-  width: 100%;
+  width: calc(25% - 10px);
+  position: relative;
+  float: left;
+  padding: 2px;
 }
+
+
+
+@media (max-width:991.98px)  {
+  .child{
+    width: calc(33% - 8px);
+  }
+
+}
+
+@media (max-width: 767.98px) {
+  .child {
+    width: calc(50% - 6px);
+  }
+
+
+}
+
+@media (max-width: 575.98px) {
+  .child {
+    width: calc(100% - 4px);
+  }
+
+}
+
+

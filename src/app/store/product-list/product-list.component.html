@@ -1,13 +1,13 @@
 
 <div class="container" >
 
-    <app-product class="child"></app-product>
 
-    <app-product class="child"></app-product>
 
-    <app-product class="child"></app-product>
 
-    <app-product class="child"></app-product>
+  <div *ngFor="let product of productList" class="child">
+    <app-product [product]="product"></app-product>
+  </div>
+
 
 
 
