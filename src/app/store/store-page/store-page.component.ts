@@ -1,98 +1,11 @@
-import {Component, Injectable, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
-import {BehaviorSubject} from "rxjs";
 import {FlatTreeControl} from "@angular/cdk/tree";
 import {SelectionModel} from "@angular/cdk/collections";
+import {SearchCriteriaService, TodoItemFlatNode, TodoItemNode} from "../search-criteria.service";
 
 
-export class TodoItemNode {
 
-  children: TodoItemNode[] = [] ;
-  item: string ="";
-}
-
-/** Flat to-do item node with expandable and level information */
-export class TodoItemFlatNode {
-  item: string ="";
-  level: number =0;
-  expandable: boolean =false;
-}
-
-/**
- * The Json object for to-do list data.
- */
-const TREE_DATA = {
-  Groceries: {
-    'Almond Meal flour': null,
-    'Organic eggs': null,
-    'Protein Powder': null,
-    Fruits: {
-      Apple: null,
-      Berries: ['Blueberry', 'Raspberry'],
-      Orange: null,
-    },
-  },
-  Reminders: ['Cook dinner', 'Read the Material Design spec', 'Upgrade Application to Angular'],
-};
-
-@Injectable({
-  providedIn : 'root'
-})
-export class ChecklistDatabase {
-  dataChange = new BehaviorSubject<TodoItemNode[]>([]);
-
-  get data(): TodoItemNode[] {
-    return this.dataChange.value;
-  }
-
-  constructor() {
-    this.initialize();
-  }
-
-  initialize() {
-    // Build the tree nodes from Json object. The result is a list of `TodoItemNode` with nested
-    //     file node as children.
-    const data = this.buildFileTree(TREE_DATA, 0);
-
-    // Notify the change.
-    this.dataChange.next(data);
-  }
-
-  /**
-   * Build the file structure tree. The `value` is the Json object, or a sub-tree of a Json object.
-   * The return value is the list of `TodoItemNode`.
-   */
-  buildFileTree(obj: {[key: string]: any}, level: number): TodoItemNode[] {
-    return Object.keys(obj).reduce<TodoItemNode[]>((accumulator, key) => {
-      const value = obj[key];
-      const node = new TodoItemNode();
-      node.item = key;
-
-      if (value != null) {
-        if (typeof value === 'object') {
-          node.children = this.buildFileTree(value, level + 1);
-        } else {
-          node.item = value;
-        }
-      }
-
-      return accumulator.concat(node);
-    }, []);
-  }
-
-  /** Add an item to to-do list */
-  insertItem(parent: TodoItemNode, name: string) {
-    if (parent.children) {
-      parent.children.push({item: name} as TodoItemNode);
-      this.dataChange.next(this.data);
-    }
-  }
-
-  updateItem(node: TodoItemNode, name: string) {
-    node.item = name;
-    this.dataChange.next(this.data);
-  }
-}
 
 @Component({
   selector: 'app-store-page',
@@ -111,7 +24,7 @@ export class StorePageComponent implements OnInit {
   selectedParent: TodoItemFlatNode | null = null;
 
   /** The new item's name */
-  newItemName = '';
+ // newItemName = '';
 
   treeControl: FlatTreeControl<TodoItemFlatNode>;
 
@@ -122,7 +35,7 @@ export class StorePageComponent implements OnInit {
   /** The selection for checklist */
   checklistSelection = new SelectionModel<TodoItemFlatNode>(true /* multiple */);
 
-  constructor(private _database: ChecklistDatabase) {
+  constructor( private _searchService:SearchCriteriaService) {
     this.treeFlattener = new MatTreeFlattener(
       this.transformer,
       this.getLevel,
@@ -132,9 +45,11 @@ export class StorePageComponent implements OnInit {
     this.treeControl = new FlatTreeControl<TodoItemFlatNode>(this.getLevel, this.isExpandable);
     this.dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-    _database.dataChange.subscribe(data => {
+    _searchService.dataChange.subscribe(data => {
       this.dataSource.data = data;
     });
+
+
   }
 
   getLevel = (node: TodoItemFlatNode) => node.level;
@@ -244,20 +159,20 @@ export class StorePageComponent implements OnInit {
     return null;
   }
 
-  /** Select the category so we can insert the new item. */
-  addNewItem(node: TodoItemFlatNode) {
-    const parentNode = this.flatNodeMap.get(node);
-    this._database.insertItem(parentNode!, '');
-    this.treeControl.expand(node);
-  }
 
-  /** Save the node to database */
-  saveNode(node: TodoItemFlatNode, itemValue: string) {
-    const nestedNode = this.flatNodeMap.get(node);
-    this._database.updateItem(nestedNode!, itemValue);
-  }
+
+
 
   ngOnInit(): void {
+  }
+
+  click(){
+
+    const parents = this.checklistSelection.selected.map((element)=> this.getParentNode(element)?.item)
+    const children = this.checklistSelection.selected.map((element)=>element.item)
+   // console.log(this.getParentNode(this.checklistSelection.selected[0]))
+    this._searchService.selectedCriteria(parents,children)
+
   }
 
 }
