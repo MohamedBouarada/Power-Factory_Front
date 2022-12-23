@@ -20,7 +20,9 @@ export class NavbarComponent implements OnInit {
   navbarIcon: string = 'menu';
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+  }
   activateMenu() {
     const navLinks = document.querySelector('.navLinks');
     navLinks!.classList.toggle('mobile-menu');
@@ -30,4 +32,12 @@ export class NavbarComponent implements OnInit {
       this.navbarIcon = 'menu';
     }
   }
+
+  hideMenu(){
+    const link = document.querySelector('.navLinks');
+    link!.classList.remove("mobile-menu")
+    this.navbarIcon = 'menu';
+  }
+
+  
 }

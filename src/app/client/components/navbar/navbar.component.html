@@ -5,12 +5,13 @@
     </div>
     <div class="navLinks">
       <ul>
-        <li><a href="#" class="link">Home</a></li>
-        <li><a href="#" class="link">Programs</a></li>
-        <li><a href="#" class="link">Support</a></li>
-        <li><a href="#" class="link">Infos</a></li>
-        <li><a href="#" class="link">Contact</a></li>
-        <li><a href="#" class="joinButton">Join now</a></li>
+        <li><a href="#" class="link" [routerLink]="['/']"  routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}" (click)="hideMenu()">Home</a></li>
+        <li><a href="#" class="link" [routerLink]="['/programs']" routerLinkActive="active" (click)="hideMenu()">Programs</a></li>
+        <li><a href="#" class="link" [routerLink]="['/']" routerLinkActive="active" (click)="hideMenu()">Support</a></li>
+        <li><a href="#" class="link" [routerLink]="['/']" routerLinkActive="active" (click)="hideMenu()">Infos</a></li>
+        <li><a href="#" class="link" [routerLink]="['/']" routerLinkActive="active" (click)="hideMenu()">Contact</a></li>
+        <li><a href="#" class="joinButton" [routerLink]="['/']" routerLinkActive="active" (click)="hideMenu()">Join now</a></li>
       </ul>
       <!-- <button class="joinButton">Join now</button> -->
     </div>
