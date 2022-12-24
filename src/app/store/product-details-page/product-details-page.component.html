@@ -1,0 +1,85 @@
+<div class="container">
+
+  <div class="navigator">
+    <button mat-icon-button  aria-label=" go back icon"
+
+    >
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </div>
+
+
+
+<div class="product-detail-section">
+
+<div class="images-container">
+
+  <div >
+    <img src="{{product.photos[currentIndex]}}" alt="product" class="main-image">
+  </div>
+    <carousel    [cellsToShow]="3" >
+      <div *ngFor="let photo of product.photos ;let index=index" class="carousel-cell">
+        <img *ngIf="currentIndex==index" src="{{photo}}" alt="product" (click)="handleIndexChange(index)" style="opacity: 1">
+        <img *ngIf="currentIndex!=index" src="{{photo}}" alt="product" (click)="handleIndexChange(index)" style="opacity: 0.5">
+      </div>
+
+    </carousel>
+</div>
+
+  <div class="description-container">
+    <div class="name">{{product.name}}</div>
+    <div class="brand">{{product.brand}}</div>
+    <div class="price">${{product.price}}</div>
+    <div class="description">{{product.description}}</div>
+    <div class="available">{{product.availability}} </div>
+    <div>
+    <form class="example-form">
+      <mat-form-field >
+        <mat-label>Quantity</mat-label>
+        <input matInput placeholder="Quantity" [value]="quantity" type="number" min="1" [max]="product.number">
+      </mat-form-field>
+    </form>
+    </div>
+
+    <button mat-raised-button>Add To Cart</button>
+    <button mat-raised-button>Command And pay</button>
+  </div>
+
+
+
+</div>
+
+  <div class="footer">
+<div>
+  <mat-list>
+    <mat-list-item>100% SECURE ONLINE PAYMENT</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>7 days on 7, 24/24 <br>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Free delivery starting from $200</mat-list-item>
+  </mat-list>
+
+</div>
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Refund and Change policy
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>Politique d'échange et de remboursement. Informez vos visiteurs des conditions d'échange et de remboursement de votre boutique en ligne. Proposez une politique claire afin d'établir une relation de confiance avec vos clients et leur permettre d'acheter sereinement sur votre site.</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Delivery policy
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>Politique de livraison. C'est l'espace idéal pour ajouter des détails supplémentaires sur vos modes de livraison, options d'emballage et prix. Proposez une politique de livraison claire afin de rassurer vos clients et leur permettre d'acheter sereinement sur votre site.</p>
+    </mat-expansion-panel>
+
+    </mat-accordion>
+  </div>
+</div>

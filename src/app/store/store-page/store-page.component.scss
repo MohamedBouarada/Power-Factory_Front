@@ -5,9 +5,11 @@
   margin-top: 10px;
 }
 .mat-toolbar{
-  background-color: var(--blue-dark);
+  background:  linear-gradient(to left, black, var(--blue-dark));
   width: calc(100% - 25px);
   margin-left: 2px;
+
+
 }
 
 .mat-drawer-container{
@@ -15,7 +17,7 @@
 }
 
 .mat-drawer{
-  background-color: var(--blue-dark);
+  background:  linear-gradient(to left, black, var(--blue-dark));;
   width: 20%;
 }
 
@@ -31,7 +33,24 @@
 }
 
 .mat-tree{
-  background-color: var(--blue-dark);
+  background: transparent;
+}
+
+.mat-option , .mat-option.mat-selected  {
+  background: var(--blue-dark) !important;
+
+}
+
+.mat-option.mat-selected {
+  color: var(--red) !important;
+}
+
+.example-spacer{
+  flex: 1 1 auto;
+}
+
+.mat-icon:hover {
+  color: var(--red);
 }
 
 @media (max-width:991.98px)  {

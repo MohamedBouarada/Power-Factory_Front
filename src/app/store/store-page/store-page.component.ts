@@ -3,8 +3,7 @@ import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import {FlatTreeControl} from "@angular/cdk/tree";
 import {SelectionModel} from "@angular/cdk/collections";
 import {SearchCriteriaService, TodoItemFlatNode, TodoItemNode} from "../search-criteria.service";
-
-
+import {IOrderOptions, IStoreData, oderSortEnum, orderCriteriaEnum, ProductService} from "../product.service";
 
 
 @Component({
@@ -14,6 +13,11 @@ import {SearchCriteriaService, TodoItemFlatNode, TodoItemNode} from "../search-c
 })
 export class StorePageComponent implements OnInit {
 
+
+  orderBy : orderCriteriaEnum[] = [orderCriteriaEnum.PRICE ,orderCriteriaEnum.NAME,orderCriteriaEnum.BRAND]
+  isCartEmpty=false ;
+  storeData?:IStoreData
+  storeDataOrder?:IOrderOptions
 
   flatNodeMap = new Map<TodoItemFlatNode, TodoItemNode>();
 
@@ -35,7 +39,7 @@ export class StorePageComponent implements OnInit {
   /** The selection for checklist */
   checklistSelection = new SelectionModel<TodoItemFlatNode>(true /* multiple */);
 
-  constructor( private _searchService:SearchCriteriaService) {
+  constructor( private _searchService:SearchCriteriaService , private _productService:ProductService) {
     this.treeFlattener = new MatTreeFlattener(
       this.transformer,
       this.getLevel,
@@ -49,7 +53,8 @@ export class StorePageComponent implements OnInit {
       this.dataSource.data = data;
     });
 
-
+   this.storeData= this._productService.storeData
+    this.storeDataOrder = this._productService.order
   }
 
   getLevel = (node: TodoItemFlatNode) => node.level;
@@ -174,5 +179,26 @@ export class StorePageComponent implements OnInit {
     this._searchService.selectedCriteria(parents,children)
 
   }
+
+  handleSelectChange(value:orderCriteriaEnum) {
+   // console.log(value)
+    this._productService.handleOrderCriteriaChange(value);
+  }
+
+  handlePrevPage(){
+    this._productService.handlePreviousPage()
+  }
+
+  handleNextPage(){
+    this._productService.handleNextPage()
+  }
+
+  handleSortASCChange(){
+    this._productService.handleSortOrderChange(oderSortEnum.ASC)
+  }
+  handleSortDESCChange(){
+    this._productService.handleSortOrderChange(oderSortEnum.DESC)
+  }
+
 
 }

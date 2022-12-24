@@ -36,14 +36,43 @@
     </mat-drawer>
 
     <mat-toolbar>
+
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
       <span>Power Factory</span>
       <span class="example-spacer"></span>
+      <button mat-icon-button  aria-label=" prev icon" [disabled]="storeData!.page ==1" (click)="handlePrevPage()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <span>{{storeData!.page}}</span>
+      <button mat-icon-button  aria-label=" next icon"
+              [disabled]="storeData!.page ==storeData!.numberOfPages"
+              (click)="handleNextPage()"
+      >
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+
+      <mat-form-field appearance="legacy">
+
+        <mat-select #criteria [value]="orderBy[0]" (valueChange)="handleSelectChange(criteria.value)" >
+          <mat-option *ngFor="let order of orderBy" [value]="order">
+            {{order}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-icon-button  aria-label=" north icon" (click)="handleSortASCChange()">
+        <mat-icon>north</mat-icon>
+      </button>
+      <button mat-icon-button  aria-label=" south icon" (click)="handleSortDESCChange()">
+        <mat-icon>south</mat-icon>
+      </button>
+      <button mat-button  aria-label=" cart icon" >
+        <mat-icon matBadge="7" [matBadgeHidden]="isCartEmpty">shopping_cart</mat-icon>
+      </button>
     </mat-toolbar>
 
-    <app-product-list> </app-product-list>
+    <app-product-list [productList]="storeData!.data"> </app-product-list>
 
 
   </mat-drawer-container>

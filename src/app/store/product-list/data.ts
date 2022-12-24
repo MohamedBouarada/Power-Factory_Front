@@ -10,7 +10,7 @@ export const productListData: ProductClass[] = [
     price : 170,
     availability : 'available',
     number :30,
-    photos:["https://material.angular.io/assets/img/examples/shiba2.jpg"]
+    photos:["https://material.angular.io/assets/img/examples/shiba2.jpg","https://material.angular.io/assets/img/examples/shiba2.jpg","https://material.angular.io/assets/img/examples/shiba2.jpg","https://material.angular.io/assets/img/examples/shiba2.jpg","https://material.angular.io/assets/img/examples/shiba2.jpg"]
   },
   {
     id:2,

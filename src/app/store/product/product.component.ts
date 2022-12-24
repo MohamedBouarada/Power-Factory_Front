@@ -11,6 +11,7 @@ export class ProductComponent implements OnInit {
   @Input()
   product!:ProductClass
 
+  isHovering = false
   constructor() { }
 
   ngOnInit(): void {
