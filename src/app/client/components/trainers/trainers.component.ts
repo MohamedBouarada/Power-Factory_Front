@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TrainerInterface } from './trainer-interface';
 
+import * as Aos from 'aos';
 @Component({
   selector: 'app-trainers',
   templateUrl: './trainers.component.html',
@@ -63,6 +64,7 @@ export class TrainersComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    Aos.init()
     this.shownList = this.listOfTrainers.slice(0, this.numberOfLines * 2);
     this.hiddenList = this.listOfTrainers.slice(
       this.numberOfLines * 2,
@@ -76,10 +78,6 @@ export class TrainersComponent implements OnInit {
       this.shownList.length / 2 + (this.shownList.length % 2),
       this.shownList.length
     );
-
-    console.log('====================================');
-    console.log(this.hiddenList);
-    console.log('====================================');
   }
   showMoreCoaches() {
     if (this.showMore) {

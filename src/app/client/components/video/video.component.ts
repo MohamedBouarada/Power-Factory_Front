@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-video',
@@ -16,6 +17,7 @@ export class VideoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    Aos.init();
   }
 
 }

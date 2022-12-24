@@ -3,7 +3,7 @@
     <app-title description="The Best Seller Of Hitheme" title1="Best" title2="Seller" ></app-title>
       <owl-carousel-o [options]="customOptions" class="carousel">
         <ng-template carouselSlide *ngFor="let product of this.listOfProducts" >
-          <div class="card">
+          <div class="card" data-aos="fade-up">
             <div class="card-main">
               <div class="discount">{{ product.discount }}%</div>
               <div class="label label-green">Pre-order</div>

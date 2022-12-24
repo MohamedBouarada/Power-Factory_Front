@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GymClassInterface } from './gym-class-interface';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-gym-classes',
@@ -75,7 +76,9 @@ export class GymClassesComponent implements OnInit {
   ];
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    Aos.init();
+  }
 
   showMore: boolean = false;
   numberOfClassesShown: number = 4;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    Aos.init()
     var textarr = ['Be Stronger','Fitness First', 'Make It Happen ', 'Shock Everyone'];
     var index = 0;
 

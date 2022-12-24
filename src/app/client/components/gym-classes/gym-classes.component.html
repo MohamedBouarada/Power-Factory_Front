@@ -12,6 +12,8 @@
       *ngFor="
         let class of this.listOfClasses | slice : 0 : this.numberOfClassesShown
       "
+      data-aos="fade-up"
+      data-aos-duration="1500"
     >
       <div class="card-image">
         <img src="{{ class.image }}" alt="class" />
@@ -38,8 +40,10 @@
     </div>
     <div class="btn-cont">
       <button mat-fab extended (click)="showMoreClasses()" class="show-btn">
-        {{showMore ? 'Show Less' : 'Show More'}}
-        <mat-icon>{{showMore ? 'arrow_drop_up' : 'arrow_drop_down'}}</mat-icon>
+        {{ showMore ? "Show Less" : "Show More" }}
+        <mat-icon>{{
+          showMore ? "arrow_drop_up" : "arrow_drop_down"
+        }}</mat-icon>
       </button>
     </div>
   </div>
