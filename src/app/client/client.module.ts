@@ -21,6 +21,8 @@ import { ClientRoutingModule } from './client-routing.module';
 import { DefaultLandingImagePipe } from './pipes/default-landing-image.pipe';
 import { GymClassesComponent } from './components/gym-classes/gym-classes.component';
 import { GymProgramsComponent } from './components/gym-programs/gym-programs.component';
+import { CoachesComponent } from './pages/coaches/coaches.component';
+import { TrainersComponent } from './components/trainers/trainers.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { GymProgramsComponent } from './components/gym-programs/gym-programs.com
     DefaultLandingImagePipe,
     GymClassesComponent,
     GymProgramsComponent,
+    CoachesComponent,
+    TrainersComponent,
   ],
   exports:[NavbarComponent,FooterComponent],
   imports: [

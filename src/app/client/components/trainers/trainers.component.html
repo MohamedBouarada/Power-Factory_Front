@@ -1,0 +1,63 @@
+<section class="title">
+  <app-title
+    description="The body achieves what the mind believes."
+    title1="Our"
+    title2="Coaches"
+  ></app-title>
+</section>
+<section class="trainers">
+  <div class="containers">
+    <div class="cards-container">
+      <div class="left">
+        <div
+          class="card"
+          *ngFor="
+            let leftItem of this.leftList
+              | slice : 0 : this.numberOfLeftLinesShown
+          "
+        >
+          <div class="image-container">
+            <img src="{{ leftItem.image }}" alt="coach" />
+          </div>
+          <div class="card-info">
+            <div class="card-title">
+              {{ leftItem.name }}
+            </div>
+            <div class="card-description">
+              {{ leftItem.description }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div
+          class="card"
+          *ngFor="
+            let rightItem of this.rightList
+              | slice : 0 : this.numberOfRightLinesShown
+          "
+        >
+          <div class="image-container">
+            <img src="{{ rightItem.image }}" alt="coach" />
+          </div>
+          <div class="card-info">
+            <div class="card-title">
+              {{ rightItem.name }}
+            </div>
+            <div class="card-description">
+              {{ rightItem.description }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-cont">
+      <button mat-fab extended (click)="showMoreCoaches()" class="show-btn">
+        {{ showMore ? "Show Less" : "Show More" }}
+        <mat-icon>{{
+          showMore ? "arrow_drop_up" : "arrow_drop_down"
+        }}</mat-icon>
+      </button>
+    </div>
+  </div>
+</section>
