@@ -64,7 +64,7 @@ export class TrainersComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    Aos.init()
+    
     this.shownList = this.listOfTrainers.slice(0, this.numberOfLines * 2);
     this.hiddenList = this.listOfTrainers.slice(
       this.numberOfLines * 2,

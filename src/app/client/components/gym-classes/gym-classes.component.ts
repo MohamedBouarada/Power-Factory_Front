@@ -77,7 +77,7 @@ export class GymClassesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    Aos.init();
+    
   }
 
   showMore: boolean = false;

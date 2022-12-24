@@ -11,7 +11,7 @@ export class TrainingTechniquesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    Aos.init()
+   
   }
 
 }
