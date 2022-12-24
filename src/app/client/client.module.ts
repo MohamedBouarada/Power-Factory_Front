@@ -23,6 +23,8 @@ import { GymClassesComponent } from './components/gym-classes/gym-classes.compon
 import { GymProgramsComponent } from './components/gym-programs/gym-programs.component';
 import { CoachesComponent } from './pages/coaches/coaches.component';
 import { TrainersComponent } from './components/trainers/trainers.component';
+import { TrainingTechniquesComponent } from './components/training-techniques/training-techniques.component';
+import { CardComponent } from './components/shared/card/card.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { TrainersComponent } from './components/trainers/trainers.component';
     GymProgramsComponent,
     CoachesComponent,
     TrainersComponent,
+    TrainingTechniquesComponent,
+    CardComponent,
   ],
   exports:[NavbarComponent,FooterComponent],
   imports: [
