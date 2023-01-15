@@ -1,5 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ProductClass} from "./productClass";
+import {environment} from "../../../environments/environment";
+import {IProduct} from "../product.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -9,12 +12,20 @@ import {ProductClass} from "./productClass";
 export class ProductComponent implements OnInit {
 
   @Input()
-  product!:ProductClass
+  product!:IProduct
+
+
+  productImage = environment.apiBaseUrl
 
   isHovering = false
-  constructor() { }
+
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  navigateToDetails(){
+this.router.navigate(['product',this.product.id],)
   }
 
 }

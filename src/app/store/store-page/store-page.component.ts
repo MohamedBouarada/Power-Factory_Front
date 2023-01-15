@@ -16,8 +16,9 @@ export class StorePageComponent implements OnInit {
 
   orderBy : orderCriteriaEnum[] = [orderCriteriaEnum.PRICE ,orderCriteriaEnum.NAME,orderCriteriaEnum.BRAND]
   isCartEmpty=false ;
-  storeData?:IStoreData
+  storeData:IStoreData |undefined
   storeDataOrder?:IOrderOptions
+  isASC =  oderSortEnum.ASC
 
   flatNodeMap = new Map<TodoItemFlatNode, TodoItemNode>();
 
@@ -52,7 +53,7 @@ export class StorePageComponent implements OnInit {
     _searchService.dataChange.subscribe(data => {
       this.dataSource.data = data;
     });
-
+   this._productService.getAllData()
    this.storeData= this._productService.storeData
     this.storeDataOrder = this._productService.order
   }
@@ -169,6 +170,9 @@ export class StorePageComponent implements OnInit {
 
 
   ngOnInit(): void {
+   // this._productService.getAllData()
+    //this.storeData = this._productService.storeData
+    this.getAllStoreData()
   }
 
   click(){
@@ -183,21 +187,39 @@ export class StorePageComponent implements OnInit {
   handleSelectChange(value:orderCriteriaEnum) {
    // console.log(value)
     this._productService.handleOrderCriteriaChange(value);
+    this.getAllStoreData()
   }
 
   handlePrevPage(){
     this._productService.handlePreviousPage()
+    this.getAllStoreData()
   }
 
   handleNextPage(){
-    this._productService.handleNextPage()
+    this._productService.handleNextPage(this.storeData!.numberOfPages)
+    this.getAllStoreData()
   }
 
   handleSortASCChange(){
     this._productService.handleSortOrderChange(oderSortEnum.ASC)
+    this.getAllStoreData()
   }
   handleSortDESCChange(){
     this._productService.handleSortOrderChange(oderSortEnum.DESC)
+    this.getAllStoreData()
+  }
+
+  getAllStoreData() {
+    this._productService.getAllData().subscribe({
+      next: data => {
+        this.storeData = data
+        this.storeDataOrder = this._productService.order
+        console.log(data)
+      } ,
+      error: err => console.log(err)
+    })
+
+
   }
 
 

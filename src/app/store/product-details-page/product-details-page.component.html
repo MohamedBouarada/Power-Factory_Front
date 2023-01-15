@@ -2,7 +2,7 @@
 
   <div class="navigator">
     <button mat-icon-button  aria-label=" go back icon"
-
+      (click)="goToStore()"
     >
       <mat-icon>arrow_back</mat-icon>
     </button>
@@ -15,28 +15,28 @@
 <div class="images-container">
 
   <div >
-    <img src="{{product.photos[currentIndex]}}" alt="product" class="main-image">
+    <img src="{{imageBaseUrl}}/{{product!.photos[currentIndex].url}}" alt="product" class="main-image">
   </div>
     <carousel    [cellsToShow]="3" >
-      <div *ngFor="let photo of product.photos ;let index=index" class="carousel-cell">
-        <img *ngIf="currentIndex==index" src="{{photo}}" alt="product" (click)="handleIndexChange(index)" style="opacity: 1">
-        <img *ngIf="currentIndex!=index" src="{{photo}}" alt="product" (click)="handleIndexChange(index)" style="opacity: 0.5">
+      <div *ngFor="let photo of product!.photos ;let index=index" class="carousel-cell">
+        <img *ngIf="currentIndex==index" src="{{imageBaseUrl}}/{{photo.url}}" alt="product" (click)="handleIndexChange(index)" style="opacity: 1">
+        <img *ngIf="currentIndex!=index" src="{{imageBaseUrl}}/{{photo.url}}" alt="product" (click)="handleIndexChange(index)" style="opacity: 0.5">
       </div>
 
     </carousel>
 </div>
 
   <div class="description-container">
-    <div class="name">{{product.name}}</div>
-    <div class="brand">{{product.brand}}</div>
-    <div class="price">${{product.price}}</div>
-    <div class="description">{{product.description}}</div>
-    <div class="available">{{product.availability}} </div>
+    <div class="name">{{product!.name}}</div>
+    <div class="brand">{{product!.brand}}</div>
+    <div class="price">${{product!.price}}</div>
+    <div class="description">{{product!.description}}</div>
+    <div class="available">{{product!.availability}} </div>
     <div>
     <form class="example-form">
       <mat-form-field >
         <mat-label>Quantity</mat-label>
-        <input matInput placeholder="Quantity" [value]="quantity" type="number" min="1" [max]="product.number">
+        <input matInput placeholder="Quantity" [value]="quantity" type="number" min="1" [max]="product!.number">
       </mat-form-field>
     </form>
     </div>

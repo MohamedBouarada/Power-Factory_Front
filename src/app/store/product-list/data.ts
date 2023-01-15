@@ -1,9 +1,14 @@
 import {ProductClass} from "../product/productClass";
+import {IProduct} from "../product.service";
 
 
-export const productListData: ProductClass[] = [
+export const productListData: IProduct[] = [
+  /*
   {
     id:1,
+    createdAt :"aaa",
+    updatedAt:"aaa",
+    deletedAt :"aaa",
     name :'whey protein',
     brand : 'dummy brand',
     description : 'good for building muscle',
@@ -12,6 +17,7 @@ export const productListData: ProductClass[] = [
     number :30,
     photos:["https://material.angular.io/assets/img/examples/shiba2.jpg","https://material.angular.io/assets/img/examples/shiba2.jpg","https://material.angular.io/assets/img/examples/shiba2.jpg","https://material.angular.io/assets/img/examples/shiba2.jpg","https://material.angular.io/assets/img/examples/shiba2.jpg"]
   },
+  /*
   {
     id:2,
     name :'creatine',
@@ -53,5 +59,5 @@ export const productListData: ProductClass[] = [
     photos:["https://material.angular.io/assets/img/examples/shiba2.jpg"]
   },
 
-
+*/
 ]

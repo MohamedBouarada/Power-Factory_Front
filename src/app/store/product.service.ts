@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {productListData} from "./product-list/data";
+import {HttpClient, HttpParams} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 
 export interface IProduct {
@@ -10,8 +12,18 @@ export interface IProduct {
   price:number,
   availability:string,
   number:number,
-  photos:string[]
+  photos:IProductPhoto[],
+  createdAt:string,
+  updatedAt:string,
+  deletedAt:string|null
 
+}
+export interface IProductPhoto {
+  id:number,
+  createdAt:string,
+  updatedAt:string,
+  deletedAt:string|null,
+  url:string
 }
 
 export interface IStoreData {
@@ -48,23 +60,21 @@ export interface IOrderOptions {
 })
 export class ProductService {
 
-  _storeData : IStoreData = {
-    data:productListData,
-    total:productListData.length,
-    page:1,
-    numberOfPages:1
-  }
+ private _storeData : IStoreData |undefined
 
-  _order : IOrderOptions = {
+  private _order : IOrderOptions = {
     sort :oderSortEnum.ASC,
     page:1,
     perPage:10,
     orderBy:orderCriteriaEnum.PRICE
   }
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   get storeData(){
-    return this._storeData;
+    return this._storeData!;
+  }
+  set storeData(data:IStoreData) {
+   this._storeData= data
   }
   get order (){
     return this._order;
@@ -73,35 +83,47 @@ export class ProductService {
   set order( order:IOrderOptions){
     this._order = order
   }
-  getAllData(){
-    //TODO : send get request , update store data
+  getAllData() {
+
     console.log('getting data from DB')
     console.log(this.order)
+
+     return this.http.get<IStoreData>(environment.apiBaseUrl + "/product",{
+       params :{
+         ...this.order
+       }
+     })
+
+
   }
 
-  handleNextPage() {
-    if(this.storeData.page < this.storeData.numberOfPages) {
+  handleNextPage(numberOfPages:number) {
+    if(this.order.page < numberOfPages) {
       this.order.page +=1 ;
-      this.getAllData()
+     //this.getAllData()
     }
   }
   handlePreviousPage (){
-    if(this.storeData.page >1) {
+    if(this.order.page >1) {
       this.order.page -=1 ;
-      this.getAllData()
+      //this.getAllData()
     }
 
   }
 
   handleOrderCriteriaChange(criteria:orderCriteriaEnum) {
     this.order.orderBy = criteria
-    this.getAllData()
+   // this.getAllData()
   }
 
   handleSortOrderChange(sort:oderSortEnum) {
     this.order.sort =sort;
-    this.getAllData()
+   // this.getAllData()
 
+  }
+
+  getOneProduct(id:number) {
+    return this.http.get<IProduct>(environment.apiBaseUrl + "/product/" +id)
   }
 
 

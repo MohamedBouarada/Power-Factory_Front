@@ -42,12 +42,12 @@
       </button>
       <span>Power Factory</span>
       <span class="example-spacer"></span>
-      <button mat-icon-button  aria-label=" prev icon" [disabled]="storeData!.page ==1" (click)="handlePrevPage()">
+      <button mat-icon-button  aria-label=" prev icon" [disabled]="storeData?.page ==1" (click)="handlePrevPage()">
         <mat-icon>keyboard_arrow_left</mat-icon>
       </button>
-      <span>{{storeData!.page}}</span>
+      <span>{{storeData?.page}}</span>
       <button mat-icon-button  aria-label=" next icon"
-              [disabled]="storeData!.page ==storeData!.numberOfPages"
+              [disabled]="storeData?.page ==storeData?.numberOfPages"
               (click)="handleNextPage()"
       >
         <mat-icon>keyboard_arrow_right</mat-icon>
@@ -62,17 +62,19 @@
         </mat-select>
       </mat-form-field>
       <button mat-icon-button  aria-label=" north icon" (click)="handleSortASCChange()">
-        <mat-icon>north</mat-icon>
+        <mat-icon *ngIf=" storeDataOrder?.sort == isASC" class="active-icon">north</mat-icon>
+        <mat-icon *ngIf=" storeDataOrder?.sort != isASC">north</mat-icon>
       </button>
       <button mat-icon-button  aria-label=" south icon" (click)="handleSortDESCChange()">
-        <mat-icon>south</mat-icon>
+        <mat-icon *ngIf=" storeDataOrder?.sort != isASC" class="active-icon">south</mat-icon>
+        <mat-icon *ngIf=" storeDataOrder?.sort == isASC">south</mat-icon>
       </button>
       <button mat-button  aria-label=" cart icon" >
         <mat-icon matBadge="7" [matBadgeHidden]="isCartEmpty">shopping_cart</mat-icon>
       </button>
     </mat-toolbar>
 
-    <app-product-list [productList]="storeData!.data"> </app-product-list>
+    <app-product-list [productList]="storeData?.data"> </app-product-list>
 
 
   </mat-drawer-container>

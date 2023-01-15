@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ClientModule } from './client/client.module';
 import {StoreModule} from "./store/store.module";
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {StoreModule} from "./store/store.module";
     BrowserAnimationsModule,
     MaterialModule,
     ClientModule,
-    StoreModule
+    StoreModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
