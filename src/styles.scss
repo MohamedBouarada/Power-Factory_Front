@@ -80,6 +80,49 @@ body {
 .promo-products .owl-next i {
   font-size: 20px;
 }
+
+
+
+//programs dots
+.programs .owl-dots {
+  margin-top: 20px;
+  width: 70%!important;
+  margin: 0 auto!important;
+  display: flex!important;
+  justify-content: space-between!important;
+}
+.programs .owl-dots::before {
+  content: "";
+  width: 70%!important;
+  margin: 0 auto!important;
+  height: 3px!important;
+  background: #015c92!important;
+  opacity: 0.6!important;
+  position: absolute!important;
+  bottom: 13px!important;
+  // left: 50%;
+  // transform: translateX(-50%);
+}
+.programs .owl-dots .owl-dot.active span{
+  // font-size: larger;
+  
+  background-color: #ee6c4d!important;
+  
+}
+.programs .owl-dots .owl-dot{
+  z-index: 1000;
+}
+.programs .owl-dots .owl-dot span:hover{
+  background-color: #f3967e!important;
+}
+.programs .owl-dots .owl-dot span{
+  
+  width: 20px!important;
+  height: 20px!important;
+  background-color: #015c92!important;
+  z-index: 1000!important;
+  transition: all .3s ease;
+}
 @media screen and (max-width: 700px) {
   .policy-product .owl-prev,
   .policy-product .owl-next {
@@ -106,5 +149,17 @@ body {
   .promo-products .owl-next {
     width: 30px !important;
     margin: 10px 30px 0 !important;
+  }
+
+
+  //programs dots
+  .programs .owl-dots .owl-dot span{
+    width: 15px!important;
+    height: 15px!important;
+  }
+  .programs .owl-dots::before {
+    
+    bottom: 11px!important;
+    
   }
 }

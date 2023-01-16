@@ -1,0 +1,191 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+.title {
+  margin-top: 40px;
+  background: white;
+  padding: 10px 0;
+  font-family: "Roboto", sans-serif;
+}
+.classes {
+  width: 100%;
+}
+.containers {
+  width: 80%;
+  margin: 100px auto;
+}
+.card {
+  width: 100%;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 20px;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+.card-image {
+  width: 30%;
+  height: 25rem;
+  transform: translateX(-8rem);
+  position: relative;
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0.5rem 0.5rem 3rem 1px rgba(0, 0, 0, 0.206);
+  //   box-shadow: 0.5rem 0.5rem 3rem 1px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+}
+.card-image img::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0.5rem 0.5rem 3rem 1px rgba(0, 0, 0, 0.5);
+}
+.card-info {
+  width: 70%;
+}
+.date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.day,
+.time {
+  display: block;
+  color: var(--red);
+  font-size: 1.6rem;
+  font-weight: 600;
+  transition: all .3s ease;
+}
+.day:hover,.time:hover{
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.date-icon {
+  color: var(--red);
+}
+
+.card-title {
+  color: var(--blue-dark);
+  font-size: 2.5rem;
+  margin: 1.5rem 0 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.text {
+  margin-bottom: 3rem;
+  font-size: 1.4rem;
+  line-height: 1.3em;
+  color: rgb(38, 38, 38);
+}
+.btnContainer {
+  width: 170px;
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+}
+.btn-cont{
+  width: 100%;
+  text-align: center;
+}
+.show-btn{
+  width: 200px;
+  font-size: 1.3rem;
+  color: white;
+  background-color: var(--blue-1);
+  transition: all .4s ease;
+  
+}
+.show-btn:hover{
+  transform: scale(1.1);
+  background-color: #e0836b;
+}
+@media screen and (max-width: 1300px) {
+  .card-image {
+    height: 20rem;
+    width: 100%;
+    transform: translateX(-6rem);
+  }
+  .card-info {
+    width: 100%;
+  }
+  .card-title {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 950px) {
+  .card-title {
+    font-size: 1.6rem;
+  }
+  .day,
+  .time {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 790px) {
+    .day:hover,.time:hover{
+        font-size: 1.6rem;
+    }
+  .card {
+    padding: 2.5rem;
+    flex-direction: column;
+    margin: 0;
+    margin-bottom: 70px;
+  }
+  .card-image {
+    width: 100%;
+    transform: translate(0, -5.5rem);
+  }
+  .card-title {
+    font-size: 1.6rem;
+  }
+  .text {
+    font-size: 1.2rem;
+  }
+  .show-btn:hover{
+    transform: scale(1);
+    background-color: var(--blue-1);
+  }
+}
+@media screen and (max-width: 500px) {
+  .containers {
+    width: 95%;
+    margin: 50px auto;
+  }
+  .card {
+    margin: 0;
+    margin-bottom: 40px;
+    box-shadow: 0.5rem 0.5rem 3rem 1px rgba(0, 0, 0, 0.344);
+  }
+  .card-image {
+    width: 100%;
+    transform: translate(0, -4rem);
+  }
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--blue-1);
+  }
+  .text {
+    font-size: 1.1rem;
+  }
+  .date {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .day,
+  .time {
+    display: block;
+    color: var(--red);
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+}

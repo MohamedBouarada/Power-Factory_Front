@@ -1,0 +1,58 @@
+<section class="title">
+    <app-title
+      description="The body achieves what the mind believes."
+      title1="Our"
+      title2="Programs"
+    ></app-title>
+</section>
+<section class="programs" >
+  <div class="containers">
+    <owl-carousel-o [options]="customOptions" >
+      <ng-template carouselSlide *ngFor="let program of this.listOfPrograms">
+        <div class="card">
+          <div class="principaleInfo">
+            <div class="card-image">
+              <img src="{{ program.image }}" alt="program" />
+            </div>
+            <div class="card-info">
+              <div class="card-title">{{ program.title }}</div>
+              <div class="card-description">
+                {{ program.description }}
+              </div>
+              <div class="otherInfos">
+                <div class="otherInfos-title">Included in this program:</div>
+                <div class="list">
+                  <div class="list-item" *ngFor="let method of program.methods">
+                    <mat-icon class="list-icon">filter_tilt_shift</mat-icon>
+                    {{ method }}
+                  </div>
+                  <!-- <div class="list-item">
+                    <mat-icon class="list-icon">filter_tilt_shift</mat-icon>
+                    personal assessment
+                </div>
+                <div class="list-item">
+                    <mat-icon class="list-icon">filter_tilt_shift</mat-icon>
+                    personal assessment
+                </div>
+                <div class="list-item">
+                    <mat-icon class="list-icon">filter_tilt_shift</mat-icon>
+                    personal assessment
+                </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="otherInfos-responsive">
+            <div class="otherInfos-title">Included in this program:</div>
+            <div class="list">
+              <div class="list-item" *ngFor="let method of program.methods">
+                <mat-icon class="list-icon">filter_tilt_shift</mat-icon>
+                {{ method }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</section>

@@ -3,16 +3,35 @@
       <h2 class="logo">Your Logo</h2>
       <div class="toggle">aaaaaaaaaa</div>
     </div> -->
-  <video
-    src="/assets/videos/{{ videoName | defaultVideo }}"
-    muted
-    loop
-    autoplay
-    class="video"
-  ></video>
+  <div *ngIf="this.videoName.endsWith(this.mp4)">
+    <video
+      src="/assets/videos/{{ videoName | defaultVideo }}"
+      muted
+      loop
+      autoplay
+      class="video"
+    ></video>
+  </div>
+  <div *ngIf="!this.videoName.endsWith(this.mp4)">
+    <img
+      src="/assets/videos/{{ videoName | defaultLandingImage }}"
+      class="video"
+    />
+  </div>
   <div class="overlay"></div>
-  <div class="text">
-    <h2>{{ title }}</h2>
+  <div
+    class="text"
+    data-aos="fade-right"
+    data-aos-offset="300"
+    data-aos-easing="ease-in-sine"
+    data-aos-duration="1000"
+  >
+    <div
+      *ngIf="listOfTitles.length > 0; then contenu_bonn; else contenu_pas_bonn"
+    ></div>
+    <ng-template #contenu_bonn><h2>{{ observable | async }}</h2></ng-template>
+    <ng-template #contenu_pas_bonn><h2>{{ title }}</h2></ng-template>
+    
     <h3>{{ subTitle }}</h3>
     <p>
       {{ description }}

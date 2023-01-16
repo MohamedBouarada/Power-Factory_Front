@@ -1,0 +1,50 @@
+<section class="title">
+  <app-title
+    description="SHOW UP. STEP UP. HAVE FUN."
+    title1="Our"
+    title2="Classes"
+  ></app-title>
+</section>
+<section class="classes">
+  <div class="containers">
+    <div
+      class="card"
+      *ngFor="
+        let class of this.listOfClasses | slice : 0 : this.numberOfClassesShown
+      "
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
+      <div class="card-image">
+        <img src="{{ class.image }}" alt="class" />
+      </div>
+      <div class="card-info">
+        <div class="date">
+          <div class="day">
+            <mat-icon class="date-icon">calendar_today</mat-icon>
+            {{ class.date }}
+          </div>
+          <div class="time">
+            <mat-icon class="date-icon">watch_later</mat-icon>
+            {{ class.time }}
+          </div>
+        </div>
+        <h1 class="card-title">{{ class.title }}</h1>
+        <p class="text">
+          {{ class.description }}
+        </p>
+        <div class="btnContainer">
+          <app-button btnName="Join Class" iconName="arrow_right"></app-button>
+        </div>
+      </div>
+    </div>
+    <div class="btn-cont">
+      <button mat-fab extended (click)="showMoreClasses()" class="show-btn">
+        {{ showMore ? "Show Less" : "Show More" }}
+        <mat-icon>{{
+          showMore ? "arrow_drop_up" : "arrow_drop_down"
+        }}</mat-icon>
+      </button>
+    </div>
+  </div>
+</section>

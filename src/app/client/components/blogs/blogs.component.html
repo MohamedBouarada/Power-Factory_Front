@@ -35,7 +35,7 @@
   <div class="containers">
     <owl-carousel-o [options]="customOptions" class="carousel">
       <ng-template carouselSlide *ngFor="let blog of this.blogsList">
-        <div class="policy-p-card">
+        <div class="policy-p-card" data-aos="zoom-in" data-aos-duration="1000">
           <div class="date">
             <h3>{{ blog.day }}</h3>
             <h4>{{ blog.month }}</h4>
