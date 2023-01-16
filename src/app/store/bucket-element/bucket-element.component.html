@@ -1,0 +1,17 @@
+
+
+<div class="global">
+  <div>
+  <div class="name">
+    {{bucketElement!.name}}
+  </div>
+  <div class="total">
+    {{bucketElement!.quantity}} * {{bucketElement!.price}} = ${{bucketElement!.total}}
+  </div>
+  </div>
+  <div>
+    <button mat-button  aria-label=" cart icon" (click)="remove()"  >
+      <mat-icon >delete</mat-icon>
+    </button>
+  </div>
+</div>

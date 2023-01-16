@@ -23,13 +23,13 @@ export class SignupComponent {
   }
   handleCreateAccount() {
     if (this.selected === 0) {
-      this.router.navigateByUrl('signup/step1');
+      this.router.navigate(['signup-step1']);
     } else {
       console.log('under construction');
       this.router.navigateByUrl('signup/step1');
     }
   }
   handleLogin() {
-    this.router.navigateByUrl('/signup');
+    this.router.navigateByUrl('/login');
   }
 }

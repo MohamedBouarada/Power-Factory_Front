@@ -1,0 +1,22 @@
+
+
+.name {
+  font-size: 0.8em;
+}
+
+.total{
+  font-size: 0.7em;
+  color: darkgrey;
+}
+.global {
+  margin-top: 5px;
+  border-bottom: 2px solid white;
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.mat-icon:hover {
+  color: var(--red);
+}
+

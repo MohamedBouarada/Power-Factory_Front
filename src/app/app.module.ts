@@ -18,6 +18,8 @@ import {
 import { LanguageInterceptor } from './language.interceptor';
 import { HttpLoaderFactory } from './translation.config';
 import { RouterModule } from '@angular/router';
+import {StoreModule} from "./store/store.module";
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,6 +39,8 @@ import { RouterModule } from '@angular/router';
         deps: [HttpClient],
       },
     }),
+    StoreModule,
+
   ],
   providers: [
     HttpClient,

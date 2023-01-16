@@ -1,0 +1,80 @@
+<div class="container">
+  <mat-drawer-container class="example-container" >
+    <mat-drawer #drawer class="example-sidenav" mode="over" position="start">
+      <div class="filter-close-container">
+        <div>Filter</div>
+        <div><button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.close()">
+          <mat-icon>clear</mat-icon>
+        </button></div>
+      </div>
+
+      <div>
+        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+
+
+
+          <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+            <button mat-icon-button matTreeNodeToggle
+                    [attr.aria-label]="'Toggle ' + node.item">
+              <mat-icon class="mat-icon-rtl-mirror">
+                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+              </mat-icon>
+            </button>
+            <mat-checkbox [checked]="descendantsAllSelected(node)"
+                          [indeterminate]="descendantsPartiallySelected(node)"
+                          (change)="todoItemSelectionToggle(node)">{{node.item}}</mat-checkbox>
+
+          </mat-tree-node>
+
+          </mat-tree>
+
+        <div>
+          <button mat-stroked-button (click)="click()">Search</button>
+        </div>
+      </div>
+
+    </mat-drawer>
+
+    <mat-toolbar>
+
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Power Factory</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button  aria-label=" prev icon" [disabled]="storeData?.page ==1" (click)="handlePrevPage()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <span>{{storeData?.page}}</span>
+      <button mat-icon-button  aria-label=" next icon"
+              [disabled]="storeData?.page ==storeData?.numberOfPages"
+              (click)="handleNextPage()"
+      >
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+
+      <mat-form-field appearance="legacy">
+
+        <mat-select #criteria [value]="orderBy[0]" (valueChange)="handleSelectChange(criteria.value)" >
+          <mat-option *ngFor="let order of orderBy" [value]="order">
+            {{order}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-icon-button  aria-label=" north icon" (click)="handleSortASCChange()">
+        <mat-icon *ngIf=" storeDataOrder?.sort == isASC" class="active-icon">north</mat-icon>
+        <mat-icon *ngIf=" storeDataOrder?.sort != isASC">north</mat-icon>
+      </button>
+      <button mat-icon-button  aria-label=" south icon" (click)="handleSortDESCChange()">
+        <mat-icon *ngIf=" storeDataOrder?.sort != isASC" class="active-icon">south</mat-icon>
+        <mat-icon *ngIf=" storeDataOrder?.sort == isASC">south</mat-icon>
+      </button>
+      <app-bucket-list ></app-bucket-list>
+    </mat-toolbar>
+
+    <app-product-list [productList]="storeData?.data"> </app-product-list>
+
+
+  </mat-drawer-container>
+
+</div>

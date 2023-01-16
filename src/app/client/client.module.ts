@@ -29,6 +29,7 @@ import { CustomerStep3Component } from './pages/signup/client/step-3/customer-st
 import { RouterModule } from '@angular/router';
 import { ClientRoutingModule } from './client-routing.module';
 
+
 @NgModule({
   declarations: [
     HomeComponent,
