@@ -1,0 +1,51 @@
+<section>
+  <div class="back-button" (click)="stepBack()">
+    <img src="../../../assets/images/back.svg" />
+    <a> {{ "SIGNUP.BACK" | translate }} </a>
+  </div>
+  <div class="container">
+    <div class="vertical-stack">
+      <div class="title">{{ "SIGNUP.CUSTOMER.STEP2.TITLE" | translate }}</div>
+      <div class="form">
+        <form>
+          <div class="form-field">
+            <label>{{ "SIGNUP.CUSTOMER.STEP2.FIELD1" | translate }}</label>
+            <input type="text" matInput placeholder="e.g. 234, Victoria Road" />
+          </div>
+          <div class="form-field split">
+            <div class="col">
+              <label>{{ "SIGNUP.CUSTOMER.STEP2.FIELD2" | translate }}</label>
+              <input type="select" matInput placeholder="Tunisia" />
+            </div>
+            <div class="col">
+              <label>{{ "SIGNUP.CUSTOMER.STEP2.FIELD3" | translate }}</label>
+              <input type="select" matInput placeholder="Tunis" />
+            </div>
+          </div>
+          <div class="form-field split">
+            <div class="col">
+              <label>{{ "SIGNUP.CUSTOMER.STEP2.FIELD4" | translate }} </label>
+              <input matInput type="tel" placeholder="+ 216 " />
+            </div>
+            <div class="col">
+              <label>{{ "SIGNUP.CUSTOMER.STEP2.FIELD5" | translate }}</label>
+              <input matInput type="select" placeholder="4500" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <button class="main-button" (click)="nextStep()">
+        {{ "SIGNUP.CUSTOMER.STEP2.BUTTON" | translate }}
+      </button>
+      <div class="caption">
+        <span>
+          {{ "SIGNUP.CUSTOMER.STEP2.CAPTION.DESCRIPTION" | translate }}</span
+        >
+        <a class="button">{{
+          "SIGNUP.CUSTOMER.STEP2.CAPTION.BUTTON" | translate
+        }}</a>
+      </div>
+      <seekmake-step-progress [steps]="[1, 1, 0]"></seekmake-step-progress>
+    </div>
+  </div>
+</section>

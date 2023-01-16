@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +17,7 @@ export class NavbarComponent implements OnInit {
     }
   }
   navbarIcon: string = 'menu';
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
   activateMenu() {
@@ -27,5 +28,8 @@ export class NavbarComponent implements OnInit {
     } else {
       this.navbarIcon = 'menu';
     }
+  }
+  onClickLogin() {
+    this.router.navigate(['/signup']);
   }
 }

@@ -20,7 +20,8 @@ export class BlogsComponent implements OnInit {
     },
     {
       title: 'Ronnie Coleman ',
-      description:'I haven’t won a lot of wars, you know. I have had a few here and there but lifetime achievement and then being presented by Arnold also, somebody you look up to, idolize in a was, it was a quite blood reaching experience.When you rehearse something, you rehearse it so it’s easy. You’re just by yourself and you’re not thinking about it because you’re rehearsing it, you know. But once you get up there and all those people in front of you and then you get caught up in the moment.',
+      description:
+        'I haven’t won a lot of wars, you know. I have had a few here and there but lifetime achievement and then being presented by Arnold also, somebody you look up to, idolize in a was, it was a quite blood reaching experience.When you rehearse something, you rehearse it so it’s easy. You’re just by yourself and you’re not thinking about it because you’re rehearsing it, you know. But once you get up there and all those people in front of you and then you get caught up in the moment.',
       image: '/assets/images/blogs/blog-2.jpg',
       link: '',
       day: 25,
