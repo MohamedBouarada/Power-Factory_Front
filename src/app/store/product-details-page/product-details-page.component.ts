@@ -41,4 +41,7 @@ export class ProductDetailsPageComponent implements OnInit {
   addElementToCart(){
     this._orderService.add(this.product! , this.quantity)
   }
+  setValue(val:string){
+    this.quantity = parseInt(val) ;
+  }
 }

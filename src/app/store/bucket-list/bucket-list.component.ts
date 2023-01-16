@@ -13,6 +13,7 @@ export class BucketListComponent implements OnInit {
 
   bucketList?:IBucket[]
 
+
   isCartEmpty?:number ;
   totalList: number =0;
 
@@ -21,16 +22,21 @@ export class BucketListComponent implements OnInit {
 
   ngOnInit(): void {
 
-     this._orderService.bucketSubject.subscribe(data=> {
+
+     this._orderService.bucketListSubject.subscribe({next:data=> {
+       console.log("here")
        this.bucketList = data
+         console.log('here' , this.bucketList , data)
        this.isCartEmpty = this.bucketList.length
+         this.totalList = 0
+         this.bucketList?.map((element)=>{
+           this.totalList+= element.price * element.quantity
+         })
+     }
      })
 
-    this.totalList = 0
-    this.bucketList?.map((element)=>{
-      this.totalList+= element.price * element.quantity
-    })
-    console.log('from bucket' , this.bucketList)
+
+    //console.log('from bucket' , this.bucketList)
   }
 
 

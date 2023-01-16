@@ -215,7 +215,7 @@ export class StorePageComponent implements OnInit {
       next: data => {
         this.storeData = data
         this.storeDataOrder = this._productService.order
-        console.log(data)
+        //console.log(data)
       } ,
       error: err => console.log(err)
     })

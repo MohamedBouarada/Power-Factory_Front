@@ -85,8 +85,8 @@ export class ProductService {
   }
   getAllData() {
 
-    console.log('getting data from DB')
-    console.log(this.order)
+   // console.log('getting data from DB')
+    //console.log(this.order)
 
      return this.http.get<IStoreData>(environment.apiBaseUrl + "/product",{
        params :{

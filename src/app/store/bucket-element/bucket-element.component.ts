@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IBucket} from "../order.service";
+import {IBucket, OrderService} from "../order.service";
 
 @Component({
   selector: 'app-bucket-element',
@@ -12,9 +12,14 @@ export class BucketElementComponent implements OnInit {
   @Input()
   bucketElement?:IBucket
 
-  constructor() { }
+  constructor(private  _orderService:OrderService) { }
 
   ngOnInit(): void {
+  }
+
+  remove(){
+    this._orderService.remove(this.bucketElement!)
+
   }
 
 }

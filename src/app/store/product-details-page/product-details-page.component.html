@@ -36,13 +36,16 @@
     <form class="example-form">
       <mat-form-field >
         <mat-label>Quantity</mat-label>
-        <input matInput placeholder="Quantity" [value]="quantity" type="number" min="1" [max]="product!.number">
+        <input matInput placeholder="Quantity"  [value]="quantity" type="number" min="1" [max]="product!.number"
+               #number
+        (change)="setValue(number.value)"
+        >
       </mat-form-field>
     </form>
     </div>
 
-    <button mat-raised-button (click)="addElementToCart()">Add To Cart</button>
-    <button mat-raised-button>Command And pay</button>
+    <button mat-raised-button (click)="addElementToCart()" [disabled]="product!.availability!='available'">Add To Cart</button>
+    <button mat-raised-button [disabled]="product!.availability!='available'">Command And pay</button>
   </div>
 
 
