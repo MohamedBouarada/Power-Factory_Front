@@ -17,7 +17,7 @@ import { MethodsComponent } from './components/methods/methods.component';
 import { ButtonComponent } from './components/shared/button/button.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProgramsComponent } from './pages/programs/programs.component';
-import { ClientRoutingModule } from './client-routing.module';
+// import { ClientRoutingModule } from './client-routing.module';
 import { DefaultLandingImagePipe } from './pipes/default-landing-image.pipe';
 import { GymClassesComponent } from './components/gym-classes/gym-classes.component';
 import { GymProgramsComponent } from './components/gym-programs/gym-programs.component';
@@ -25,6 +25,7 @@ import { CoachesComponent } from './pages/coaches/coaches.component';
 import { TrainersComponent } from './components/trainers/trainers.component';
 import { TrainingTechniquesComponent } from './components/training-techniques/training-techniques.component';
 import { CardComponent } from './components/shared/card/card.component';
+import { ScrollAnimationDirectiveDirective } from './directives/scroll-animation-directive.directive';
 
 @NgModule({
   declarations: [
@@ -48,15 +49,16 @@ import { CardComponent } from './components/shared/card/card.component';
     TrainersComponent,
     TrainingTechniquesComponent,
     CardComponent,
+    ScrollAnimationDirectiveDirective,
   ],
   exports:[NavbarComponent,FooterComponent],
   imports: [
     CommonModule,
-    
+    AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     CarouselModule,
-    ClientRoutingModule
+    // ClientRoutingModule
   ]
 })
 export class ClientModule { }
