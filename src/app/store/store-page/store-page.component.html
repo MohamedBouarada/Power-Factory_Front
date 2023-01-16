@@ -1,6 +1,6 @@
 <div class="container">
   <mat-drawer-container class="example-container" >
-    <mat-drawer #drawer class="example-sidenav" mode="over">
+    <mat-drawer #drawer class="example-sidenav" mode="over" position="start">
       <div class="filter-close-container">
         <div>Filter</div>
         <div><button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.close()">
@@ -69,9 +69,7 @@
         <mat-icon *ngIf=" storeDataOrder?.sort != isASC" class="active-icon">south</mat-icon>
         <mat-icon *ngIf=" storeDataOrder?.sort == isASC">south</mat-icon>
       </button>
-      <button mat-button  aria-label=" cart icon" >
-        <mat-icon matBadge="7" [matBadgeHidden]="isCartEmpty">shopping_cart</mat-icon>
-      </button>
+      <app-bucket-list ></app-bucket-list>
     </mat-toolbar>
 
     <app-product-list [productList]="storeData?.data"> </app-product-list>

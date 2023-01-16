@@ -20,13 +20,17 @@ import {MatInputModule} from "@angular/material/input";
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import { BucketListComponent } from './bucket-list/bucket-list.component';
+import { BucketElementComponent } from './bucket-element/bucket-element.component';
 
 @NgModule({
   declarations: [
     ProductComponent,
     ProductListComponent,
     StorePageComponent,
-    ProductDetailsPageComponent
+    ProductDetailsPageComponent,
+    BucketListComponent,
+    BucketElementComponent
   ],
   imports: [
     CommonModule,

@@ -15,10 +15,11 @@ export class StorePageComponent implements OnInit {
 
 
   orderBy : orderCriteriaEnum[] = [orderCriteriaEnum.PRICE ,orderCriteriaEnum.NAME,orderCriteriaEnum.BRAND]
-  isCartEmpty=false ;
+
   storeData:IStoreData |undefined
   storeDataOrder?:IOrderOptions
   isASC =  oderSortEnum.ASC
+  isOpenedCart=false;
 
   flatNodeMap = new Map<TodoItemFlatNode, TodoItemNode>();
 
@@ -223,4 +224,7 @@ export class StorePageComponent implements OnInit {
   }
 
 
+  openCart() {
+    this.isOpenedCart = true
+  }
 }

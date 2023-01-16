@@ -3,6 +3,7 @@ import {IProduct, IStoreData, ProductService} from "../product.service";
 import {productListData} from "../product-list/data";
 import {ActivatedRoute, Router} from '@angular/router';
 import {environment} from "../../../environments/environment";
+import {OrderService} from "../order.service";
 
 @Component({
   selector: 'app-product-details-page',
@@ -17,7 +18,8 @@ export class ProductDetailsPageComponent implements OnInit {
   currentIndex=0
   quantity=1
   imageBaseUrl = environment.apiBaseUrl
-  constructor( private router:ActivatedRoute , private _productService:ProductService , private goBackRouter:Router) {
+  constructor( private router:ActivatedRoute , private _productService:ProductService , private goBackRouter:Router,
+               private _orderService:OrderService) {
     this.router.params.subscribe(params=>{this.id=params['id']})
   }
 
@@ -34,5 +36,9 @@ export class ProductDetailsPageComponent implements OnInit {
   }
   goToStore(){
     this.goBackRouter.navigate(['store'])
+  }
+
+  addElementToCart(){
+    this._orderService.add(this.product! , this.quantity)
   }
 }

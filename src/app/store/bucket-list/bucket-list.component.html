@@ -1,0 +1,24 @@
+
+<div>
+
+  <button mat-button  aria-label=" cart icon" (click)="drawer.toggle()" >
+    <mat-icon [matBadge]="isCartEmpty" [matBadgeHidden]="false" >shopping_cart</mat-icon>
+  </button>
+  <mat-drawer #drawer class="example-sidenav" mode="side"  position="end">
+    <div class="filter-close-container">
+      <div>Cart</div>
+      <div><button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.close()">
+        <mat-icon>clear</mat-icon>
+      </button></div>
+    </div>
+
+    <div *ngFor="let bucketElement of bucketList">
+      <app-bucket-element [bucketElement]="bucketElement"></app-bucket-element>
+    </div>
+
+    <div *ngIf="isCartEmpty">
+      Total: ${{totalList}}
+    </div>
+
+  </mat-drawer>
+</div>
