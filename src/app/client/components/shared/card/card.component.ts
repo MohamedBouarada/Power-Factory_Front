@@ -19,15 +19,15 @@ export class CardComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    const cards = Array.from(
-      document.getElementsByClassName('card') as HTMLCollectionOf<HTMLElement>,
-    );
+    // const cards = Array.from(
+    //   document.getElementsByClassName('card') as HTMLCollectionOf<HTMLElement>,
+    // );
     
-    cards.forEach(card => {
-      card.style.background= this.cardBg;
-      card.style.height=this.cardHeight;
-      // card.style.fontSize = '1.5em';
-    });
+    // cards.forEach(card => {
+    //   card.style.background= this.cardBg;
+    //   card.style.height=this.cardHeight;
+    //   // card.style.fontSize = '1.5em';
+    // });
     
   }
 

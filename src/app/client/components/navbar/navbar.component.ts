@@ -7,16 +7,16 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll() {
-    let element = document.querySelector('.navbar') as HTMLElement;
-    if (window.pageYOffset >= element.clientHeight) {
-      element.classList.add('navbar-inverse');
-    } else {
-      element.classList.remove('navbar-inverse');
-    }
-  }
+  isMobile:boolean=false
+  // @HostListener('window:scroll', ['$event'])
+  // onWindowScroll() {
+  //   let element = document.querySelector('.navbar') as HTMLElement;
+  //   if (window.pageYOffset >= element.clientHeight) {
+  //     element.classList.add('navbar-inverse');
+  //   } else {
+  //     element.classList.remove('navbar-inverse');
+  //   }
+  // }
   navbarIcon: string = 'menu';
   constructor() {}
 
@@ -24,18 +24,21 @@ export class NavbarComponent implements OnInit {
     
   }
   activateMenu() {
-    const navLinks = document.querySelector('.navLinks');
-    navLinks!.classList.toggle('mobile-menu');
+    // const navLinks = document.querySelector('.navLinks');
+    // navLinks!.classList.toggle('mobile-menu');
+    this.isMobile=true;
     if (this.navbarIcon == 'menu') {
       this.navbarIcon = 'close';
     } else {
       this.navbarIcon = 'menu';
+      this.isMobile=false;
     }
   }
 
   hideMenu(){
-    const link = document.querySelector('.navLinks');
-    link!.classList.remove("mobile-menu")
+    // const link = document.querySelector('.navLinks');
+    // link!.classList.remove("mobile-menu")
+    this.isMobile=false;
     this.navbarIcon = 'menu';
   }
 

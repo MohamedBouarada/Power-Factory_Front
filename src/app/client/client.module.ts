@@ -26,6 +26,7 @@ import { TrainersComponent } from './components/trainers/trainers.component';
 import { TrainingTechniquesComponent } from './components/training-techniques/training-techniques.component';
 import { CardComponent } from './components/shared/card/card.component';
 import { ScrollAnimationDirectiveDirective } from './directives/scroll-animation-directive.directive';
+import { NavbarDirective } from './components/navbar/navbar.directive';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { ScrollAnimationDirectiveDirective } from './directives/scroll-animation
     TrainingTechniquesComponent,
     CardComponent,
     ScrollAnimationDirectiveDirective,
+    NavbarDirective,
   ],
   exports:[NavbarComponent,FooterComponent],
   imports: [

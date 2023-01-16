@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     Aos.init()
-    var textarr = ['Be Stronger','Fitness First', 'Make It Happen ', 'Shock Everyone'];
+    // var textarr = ['Be Stronger','Fitness First', 'Make It Happen ', 'Shock Everyone'];
     // var index = 0;
 
     // setInterval(() => {
