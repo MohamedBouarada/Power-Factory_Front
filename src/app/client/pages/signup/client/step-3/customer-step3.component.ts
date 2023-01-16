@@ -23,6 +23,6 @@ export class CustomerStep3Component {
     this.showPassword[i] = !this.showPassword[i];
   }
   stepBack() {
-    this.router.navigate(['/customer-sign-up-2']);
+    this.router.navigate(['signup-step2']);
   }
 }
