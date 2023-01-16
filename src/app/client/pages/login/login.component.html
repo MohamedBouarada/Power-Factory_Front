@@ -5,10 +5,11 @@
         <div class="vertical-stack">
           <div class="title">{{ "LOGIN.TITLE" | translate }}</div>
           <div class="form">
-            <form>
+            <form [formGroup]="loginFormControl">
               <div class="form-field">
                 <label>{{ "LOGIN.FIELD1" | translate }}</label>
                 <input
+                  formControlName="username"
                   type="email"
                   matInput
                   placeholder="e.g. Johndoe@example.com"
@@ -19,6 +20,7 @@
                 <div class="row">
                   <input
                     [type]="showPassword ? 'text' : 'password'"
+                    formControlName="password"
                     matInput
                     stu
                     placeholder="1234567"
@@ -30,7 +32,7 @@
               </div>
             </form>
           </div>
-          <button class="main-button">
+          <button class="main-button" (click)="logIn()">
             {{ "LOGIN.BUTTON.SIGNIN" | translate }}
           </button>
           <div class="seperator">
