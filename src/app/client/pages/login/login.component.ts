@@ -12,11 +12,17 @@ import { TranslateService } from '@ngx-translate/core';
 export class LoginComponent {
   showPassword = false;
   rating = [1, 1, 1, 1, 1];
-  constructor(private readonly translateService: TranslateService) {
+  constructor(
+    private readonly translateService: TranslateService,
+    private readonly router: Router
+  ) {
     this.translateService.setDefaultLang('en');
     this.translateService.use(localStorage.getItem('lang') || 'en');
   }
   toggleShowPassword() {
     this.showPassword = !this.showPassword;
+  }
+  signIn() {
+    this.router.navigate(['signup']);
   }
 }

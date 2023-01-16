@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class LanguageInterceptor implements HttpInterceptor {
   //   constructor() {}
-
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler

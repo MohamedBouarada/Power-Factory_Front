@@ -16,9 +16,9 @@ export class CustomerStep1Component {
     this.translateService.use(localStorage.getItem('lang') || 'en');
   }
   nextStep() {
-    this.router.navigate(['/customer-sign-up-2']);
+    this.router.navigate(['signup-step2']);
   }
   stepBack() {
-    this.router.navigate(['/sign-up']);
+    this.router.navigate(['signup']);
   }
 }
