@@ -1,0 +1,57 @@
+<section>
+  <div class="back-button" (click)="stepBack()">
+    <img src="../../../assets/images/back.svg" />
+    <a> {{ "SIGNUP.BACK" | translate }} </a>
+  </div>
+  <div class="container">
+    <div class="vertical-stack">
+      <div class="title">{{ "SIGNUP.CUSTOMER.STEP3.TITLE" | translate }}</div>
+      <div class="form">
+        <form>
+          <div class="form-field">
+            <label>{{ "SIGNUP.CUSTOMER.STEP3.FIELD1" | translate }}</label>
+            <div class="row">
+              <input
+                [type]="showPassword[0] ? 'text' : 'password'"
+                matInput
+                placeholder="*****"
+              />
+              <span (click)="toggleShowPassword(0)">
+                {{ showPassword[0] ? "Hide" : "Show" }}
+              </span>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>{{ "SIGNUP.CUSTOMER.STEP3.FIELD2" | translate }}</label>
+            <div class="row">
+              <input
+                [type]="showPassword[1] ? 'text' : 'password'"
+                matInput
+                placeholder="*****"
+              />
+              <span (click)="toggleShowPassword(1)">
+                {{ showPassword[1] ? "Hide" : "Show" }}
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <button class="main-button">
+        {{ "SIGNUP.CUSTOMER.STEP3.BUTTON" | translate }}
+      </button>
+      <div class="caption">
+        <p>
+          {{ "SIGNUP.CUSTOMER.STEP3.CAPTION.DESC1" | translate }}
+          <a href="#">{{
+            "SIGNUP.CUSTOMER.STEP3.CAPTION.BUTTON1" | translate
+          }}</a>
+          {{ "SIGNUP.CUSTOMER.STEP3.CAPTION.DESC2" | translate }}
+          <a href="#">
+            {{ "SIGNUP.CUSTOMER.STEP3.CAPTION.BUTTON2" | translate }}</a
+          >
+        </p>
+      </div>
+      <seekmake-step-progress [steps]="[1, 1, 1]"></seekmake-step-progress>
+    </div>
+  </div>
+</section>

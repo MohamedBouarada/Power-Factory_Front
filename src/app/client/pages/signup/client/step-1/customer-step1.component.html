@@ -1,0 +1,56 @@
+<section>
+  <div class="back-button" (click)="stepBack()">
+    <img src="../../../assets/images/back.svg" />
+    <a> {{ "SIGNUP.BACK" | translate }} </a>
+  </div>
+  <div class="container">
+    <div class="vertical-stack">
+      <div class="title">{{ "SIGNUP.CUSTOMER.STEP1.TITLE" | translate }}</div>
+      <div class="form">
+        <form>
+          <div class="form-field">
+            <label>{{ "SIGNUP.CUSTOMER.STEP1.FIELD1" | translate }}</label>
+            <input type="email" matInput placeholder="e.g John Doe" />
+          </div>
+          <div class="form-field">
+            <label>{{ "SIGNUP.CUSTOMER.STEP1.FIELD2" | translate }}</label>
+            <input type="tel" matInput placeholder="e.g. Johndoe@example.com" />
+          </div>
+        </form>
+      </div>
+      <button class="main-button" (click)="nextStep()">
+        {{ "SIGNUP.CUSTOMER.STEP1.BUTTON.CONTINUE" | translate }}
+      </button>
+      <div class="seperator">
+        <div class="line"></div>
+        <div class="or-text">
+          {{ "SIGNUP.CUSTOMER.STEP1.SEPERATOR" | translate }}
+        </div>
+        <div class="line"></div>
+      </div>
+
+      <div class="social-button">
+        <div>
+          <img src="../../../assets/images/google.svg" />
+        </div>
+        {{ "SIGNUP.CUSTOMER.STEP1.BUTTON.GOOGLE" | translate }}
+      </div>
+      <div class="social-button">
+        <div>
+          <img src="../../../assets/images/facebook.svg" />
+        </div>
+        {{ "SIGNUP.CUSTOMER.STEP1.BUTTON.FACEBOOK" | translate }}
+      </div>
+
+      <div class="caption">
+        <span>
+          {{ "SIGNUP.CUSTOMER.STEP1.CAPTION.DESCRIPTION" | translate }}
+        </span>
+        <a class="button">{{
+          "SIGNUP.CUSTOMER.STEP1.CAPTION.BUTTON" | translate
+        }}</a>
+      </div>
+      <seekmake-step-progress [steps]="[1, 0, 0]"></seekmake-step-progress>
+    </div>
+  </div>
+</section>

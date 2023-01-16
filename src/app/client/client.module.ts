@@ -27,6 +27,18 @@ import { TrainingTechniquesComponent } from './components/training-techniques/tr
 import { CardComponent } from './components/shared/card/card.component';
 import { ScrollAnimationDirectiveDirective } from './directives/scroll-animation-directive.directive';
 import { NavbarDirective } from './components/navbar/navbar.directive';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LanguageInterceptor } from '../language.interceptor';
+import { StepProgressComponent } from './components/shared/step-progress/step-progress.component';
+import { CustomerStep1Component } from './pages/signup/client/step-1/customer-step1.component';
+import { CustomerStep2Component } from './pages/signup/client/step-2/customer-step2.component';
+import { CustomerStep3Component } from './pages/signup/client/step-3/customer-step3.component';
+import { RouterModule } from '@angular/router';
+import { ClientRoutingModule } from './client-routing.module';
 
 @NgModule({
   declarations: [
@@ -52,15 +64,29 @@ import { NavbarDirective } from './components/navbar/navbar.directive';
     CardComponent,
     ScrollAnimationDirectiveDirective,
     NavbarDirective,
+  
+    LoginComponent,
+    SignupComponent,
+    StepProgressComponent,
+    CustomerStep1Component,
+    CustomerStep2Component,
+    CustomerStep3Component,
   ],
-  exports:[NavbarComponent,FooterComponent],
+  exports: [NavbarComponent,FooterComponent],
   imports: [
     CommonModule,
     AppRoutingModule,
+    ClientRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     CarouselModule,
     // ClientRoutingModule
-  ]
+  
+    ReactiveFormsModule,
+    CarouselModule,
+    TranslateModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
-export class ClientModule { }
+export class ClientModule {}

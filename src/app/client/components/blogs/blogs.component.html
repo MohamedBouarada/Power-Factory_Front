@@ -33,24 +33,18 @@
 </section>
 <section class="policy-product">
   <div class="containers">
-    <owl-carousel-o [options]="customOptions" class="carousel" >
+    <owl-carousel-o [options]="customOptions" class="carousel">
       <ng-template carouselSlide *ngFor="let blog of this.blogsList">
         <div class="policy-p-card" data-aos="zoom-in" data-aos-duration="1000">
           <div class="date">
-            <h3>{{blog.day}} </h3>
-            <h4>{{blog.month}}</h4>
+            <h3>{{ blog.day }}</h3>
+            <h4>{{ blog.month }}</h4>
           </div>
           <div class="policy-img">
-            <img
-              src="{{blog.image}}"
-              class="policy-img"
-              alt="p1"
-            />
+            <img src="{{ blog.image }}" class="policy-img" alt="p1" />
           </div>
-          <h2>{{blog.title}} </h2>
-          <p> 
-            {{blog.description.substring(0,340)}} ...
-          </p>
+          <h2>{{ blog.title }}</h2>
+          <p>{{ blog.description.substring(0, 340) }} ...</p>
           <app-button btnName="Read More" iconName="arrow_right"></app-button>
         </div>
       </ng-template>

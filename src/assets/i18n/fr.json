@@ -1,0 +1,135 @@
+{
+  "SIGNUP": {
+    "TITLE": "Create an account",
+    "OPTION1": {
+      "TITLE": "Client",
+      "DESCRIPTION": "lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    "OPTION2": {
+      "TITLE": "Coach",
+      "DESCRIPTION": "lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    "BUTTON": "CREATE AN ACCOUNT",
+    "CAPTION": {
+      "DESCRIPTION": "Already have an account? ",
+      "BUTTON": "Log in"
+    },
+    "BACK": "Go back",
+    "CUSTOMER": {
+      "STEP1": {
+        "TITLE": "Create an account",
+        "FIELD1": "Full name",
+        "FIELD2": "Email address",
+        "SEPERATOR": "OR",
+        "BUTTON": {
+          "CONTINUE": "CONTINUE",
+          "GOOGLE": "SIGN UP WITH GOOGLE",
+          "FACEBOOK": "SIGN UP WITH FACEBOOK"
+        },
+        "CAPTION": {
+          "DESCRIPTION": "Already have an account? ",
+          "BUTTON": "Log in"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Create an account",
+        "FIELD1": "Address",
+        "FIELD2": "Country",
+        "FIELD3": "City",
+        "FIELD4": "Phone number",
+        "FIELD5": "Zip code",
+        "BUTTON": "CONTINUE",
+        "CAPTION": {
+          "DESCRIPTION": "Already have an account? ",
+          "BUTTON": "Log in"
+        }
+      },
+      "STEP3": {
+        "TITLE": "Create an account",
+        "FIELD1": "Password",
+        "FIELD2": "Confirm password",
+        "BUTTON": "SIGN UP",
+        "CAPTION": {
+          "DESC1": " By clicking “Sign up” button, you acknowledge that you have read and understood, and agree to Power Factory's ",
+          "BUTTON1": "Terms & Conditions",
+          "DESC2": " and ",
+          "BUTTON2": "Privacy Policy "
+        }
+      }
+    },
+    "MANUFACTURER": {
+      "STEP1": {
+        "TITLE": "Create an account",
+        "FIELD1": "Full name",
+        "FIELD2": "Email address",
+        "FIELD3": "Phone number",
+        "SEPERATOR": "OR",
+        "BUTTON": "CONTINUE",
+        "CAPTION": {
+          "DESCRIPTION": "Already have an account? ",
+          "BUTTON": "Log in"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Tell us about your company",
+        "FIELD1": "Compan name or brand",
+        "FIELD2": "Add your first machine",
+        "FIELD3": "Machine brand",
+        "FIELD4": "Machine workspace",
+        "BUTTON": "CONTINUE",
+        "CAPTION": {
+          "DESCRIPTION": "Already have an account? ",
+          "BUTTON": "Log in"
+        }
+      },
+      "STEP3": {
+        "TITLE": "Additional information",
+        "MAP": "Show on map",
+        "FIELD1": "Address",
+        "FIELD2": "Country",
+        "FIELD3": "City",
+        "FIELD4": "Currency",
+        "FIELD5": "Zip code",
+        "BUTTON": "CONTINUE",
+        "CAPTION": {
+          "DESCRIPTION": "Already have an account? ",
+          "BUTTON": "Log in"
+        }
+      },
+      "STEP4": {
+        "TITLE": "Create an account",
+        "FIELD1": "Password",
+        "FIELD2": "Confirm password",
+        "BUTTON": "SIGN UP",
+        "CAPTION": {
+          "DESC1": " By clicking “Sign up” button, you acknowledge that you have read and understood, and agree to Power Factory's ",
+          "BUTTON1": "Terms & Conditions",
+          "DESC2": " and ",
+          "BUTTON2": "Privacy Policy "
+        }
+      }
+    }
+  },
+  "REVIEW": {
+    "BODY": "Very fast and simple, very good. Everything good !",
+    "CUSTOMER": {
+      "NAME": "Bouarada",
+      "PROFESSION": "Gym rat"
+    }
+  },
+  "LOGIN": {
+    "TITLE": "Welcome back",
+    "FIELD1": "Email address",
+    "FIELD2": "Password",
+    "SEPERATOR": "OR",
+    "BUTTON": {
+      "GOOGLE": "SIGN IN WITH GOOGLE",
+      "FACEBOOK": "SIGN IN WITH FACEBOOK",
+      "SIGNIN": "SIGN IN"
+    },
+    "CAPTION": {
+      "DESCRIPTION": "Don't have an account? ",
+      "BUTTON": "Sign up"
+    }
+  }
+}

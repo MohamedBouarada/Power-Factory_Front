@@ -1,0 +1,90 @@
+<main>
+  <div class="main-container">
+    <div class="left-section">
+      <div class="container">
+        <div class="vertical-stack">
+          <div class="title">{{ "LOGIN.TITLE" | translate }}</div>
+          <div class="form">
+            <form [formGroup]="loginFormControl">
+              <div class="form-field">
+                <label>{{ "LOGIN.FIELD1" | translate }}</label>
+                <input
+                  formControlName="username"
+                  type="email"
+                  matInput
+                  placeholder="e.g. Johndoe@example.com"
+                />
+              </div>
+              <div class="form-field">
+                <label>{{ "LOGIN.FIELD2" | translate }}</label>
+                <div class="row">
+                  <input
+                    [type]="showPassword ? 'text' : 'password'"
+                    formControlName="password"
+                    matInput
+                    stu
+                    placeholder="1234567"
+                  />
+                  <span (click)="toggleShowPassword()">
+                    {{ showPassword ? "Hide" : "Show" }}
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <button class="main-button" (click)="logIn()">
+            {{ "LOGIN.BUTTON.SIGNIN" | translate }}
+          </button>
+          <div class="seperator">
+            <div class="line"></div>
+            <div class="or-text">{{ "LOGIN.SEPERATOR" | translate }}</div>
+            <div class="line"></div>
+          </div>
+
+          <div class="social-button">
+            <div>
+              <img src="../../../assets/images/google.svg" />
+            </div>
+            {{ "LOGIN.BUTTON.GOOGLE" | translate }}
+          </div>
+          <div class="social-button">
+            <div>
+              <img src="../../../assets/images/facebook.svg" />
+            </div>
+            {{ "LOGIN.BUTTON.FACEBOOK" | translate }}
+          </div>
+
+          <div class="caption">
+            <span> {{ "LOGIN.CAPTION.DESCRIPTION" | translate }}</span>
+            <a class="button" (click)="signIn()">{{
+              "LOGIN.CAPTION.BUTTON" | translate
+            }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-section">
+      <h3 class="review-body">
+        {{ "REVIEW.BODY" | translate }}
+      </h3>
+      <div class="customer">
+        <div class="info">
+          <img src="../../../assets/images/customer.svg" alt="customer-image" />
+          <div class="profile">
+            <span class="name">{{ "REVIEW.CUSTOMER.NAME" | translate }}</span>
+            <div class="profession">
+              <div class="line"></div>
+              <span class="profession-text">{{
+                "REVIEW.CUSTOMER.PROFESSION" | translate
+              }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="rating">
+          <mat-icon fontIcon="star" *ngFor="let ratingId of rating; index as i">
+          </mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
