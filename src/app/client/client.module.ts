@@ -16,7 +16,7 @@ import { TitleComponent } from './components/shared/title/title.component';
 import { MethodsComponent } from './components/methods/methods.component';
 import { ButtonComponent } from './components/shared/button/button.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -28,7 +28,6 @@ import { CustomerStep2Component } from './pages/signup/client/step-2/customer-st
 import { CustomerStep3Component } from './pages/signup/client/step-3/customer-step3.component';
 import { RouterModule } from '@angular/router';
 import { ClientRoutingModule } from './client-routing.module';
-
 
 @NgModule({
   declarations: [
@@ -61,6 +60,8 @@ import { ClientRoutingModule } from './client-routing.module';
     ReactiveFormsModule,
     CarouselModule,
     TranslateModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class ClientModule {}
