@@ -1,0 +1,91 @@
+<main>
+  <div class="main-container">
+    <div class="left-section">
+      <div class="vertical-stack">
+        <div class="title">{{ "SIGNUP.TITLE" | translate }}</div>
+        <div
+          class="radio-section"
+          (click)="toggleSelected(0)"
+          [ngClass]="!selected ? 'highlighted' : ''"
+        >
+          <div class="icon">
+            <img
+              [src]="
+                selected
+                  ? '../../../assets/images/customer.svg'
+                  : '../../../assets/images/customer-highlighted.svg'
+              "
+            />
+          </div>
+          <div class="prompt">
+            <div class="category">{{ "SIGNUP.OPTION1.TITLE" | translate }}</div>
+            <div class="description">
+              {{ "SIGNUP.OPTION1.DESCRIPTION" | translate }}
+            </div>
+          </div>
+        </div>
+        <div
+          class="radio-section"
+          (click)="toggleSelected(1)"
+          [ngClass]="selected ? 'highlighted' : ''"
+        >
+          <div class="icon">
+            <img
+              [src]="
+                !selected
+                  ? '../../../assets/images/customer.svg'
+                  : '../../../assets/images/customer-highlighted.svg'
+              "
+            />
+          </div>
+          <div class="prompt">
+            <div class="category">{{ "SIGNUP.OPTION2.TITLE" | translate }}</div>
+            <div class="description">
+              {{ "SIGNUP.OPTION2.DESCRIPTION" | translate }}
+            </div>
+          </div>
+        </div>
+        <button class="create-account-button" (click)="handleCreateAccount()">
+          {{ "SIGNUP.BUTTON" | translate }}
+        </button>
+        <div class="caption">
+          <span> {{ "SIGNUP.CAPTION.DESCRIPTION" | translate }} </span>
+          <a class="log-in" (click)="handleLogin()"
+            >{{ "SIGNUP.CAPTION.BUTTON" | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="right-section">
+      <h3 class="review-body">
+        {{ "REVIEW.BODY" | translate }}
+      </h3>
+      <div class="customer">
+        <div class="info">
+          <img
+            class="customer-image"
+            src="../../../assets/images/customer.svg"
+            alt="bouarada-image"
+          />
+          <div class="profile">
+            <span class="name">{{ "REVIEW.CUSTOMER.NAME" | translate }}</span>
+            <div class="profession">
+              <div class="line"></div>
+              <span class="profession-text">{{
+                "REVIEW.CUSTOMER.PROFESSION" | translate
+              }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="rating">
+          <mat-icon
+            fontIcon="star"
+            color="primary"
+            *ngFor="let ratingId of rating; index as i"
+          >
+          </mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

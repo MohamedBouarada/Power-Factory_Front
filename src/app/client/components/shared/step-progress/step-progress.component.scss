@@ -1,0 +1,20 @@
+.step-container {
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+  .step {
+    width: 80px;
+    height: 8px;
+    background: rgba(14, 28, 54, 0.1);
+    border-radius: 46px;
+  }
+  .step-highlighted {
+    width: 80px;
+    height: 8px;
+    background: #1a6fee;
+    border-radius: 46px;
+  }
+}

@@ -1,0 +1,167 @@
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  .right-section {
+    // background-image: url("../../../../assets/images/logos/logo-3.png");
+    // background-size: cover;
+    background-color: #1a6fee;
+    flex: 1 1 400px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    .review-body {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    .customer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      .info {
+        display: flex;
+        gap: 10px;
+        max-width: 500px;
+        .profile {
+          .name {
+            max-width: 156px;
+            max-height: 36px;
+            font-family: "Poppins";
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 36px;
+            color: #fdfdfd;
+          }
+          .profession {
+            max-width: 100%;
+            flex-direction: row;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            .line {
+              width: 42px;
+              height: 0px;
+              border: 1px solid #fdfdfd;
+            }
+          }
+        }
+      }
+    }
+  }
+  .left-section {
+    background-color: #f5f5f5;
+    flex: 1 1 400px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .vertical-stack {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 80%;
+      .title {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        color: #0e1c36;
+      }
+      .create-account-button {
+        color: white;
+        width: 90%;
+        max-width: 400px;
+        height: 2rem;
+        background-color: #1a6fee;
+        border-radius: 5px;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        outline: inherit;
+        margin-bottom: 1rem;
+      }
+      .radio-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: #1e1e1e solid 2px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin-bottom: 2rem;
+        width: 90%;
+        max-width: 400px;
+        padding: 5px;
+        cursor: pointer;
+
+        .prompt {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+        .category {
+          color: #0e1c36;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 1rem;
+        }
+        .description {
+          color: #0e1c36;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 0.8rem;
+        }
+        .icon {
+          background: rgba(14, 28, 54, 0.05);
+          border-radius: 5px;
+          padding: 5px;
+          margin-right: 10px;
+        }
+      }
+      .highlighted {
+        .icon {
+          background: rgba(26, 111, 238, 0.1);
+          border-radius: 5px;
+        }
+        .icon {
+          path {
+            transition: 1000ms ease-in-out linear;
+            fill: #1a6fee;
+          }
+        }
+      }
+      .radio-section.highlighted {
+        border: #1a6fee solid 2px;
+      }
+    }
+    .caption {
+      font-size: 0.7rem;
+      font-weight: 300;
+      align-items: center;
+      color: #0e1c36;
+      display: flex;
+      flex-direction: row;
+    }
+    .log-in {
+      cursor: pointer;
+      color: #1a6fee;
+      margin-left: 10px;
+      font-weight: 400;
+    }
+  }
+}

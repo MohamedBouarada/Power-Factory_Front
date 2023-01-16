@@ -1,0 +1,213 @@
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  .left-section {
+    background-color: #f5f5f5;
+    flex: 1 1 400px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 32px;
+      isolation: isolate;
+      width: 100%;
+      max-height: 110px;
+      .vertical-stack {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 80%;
+        .title {
+          font-size: 2rem;
+          font-weight: 600;
+          margin-bottom: 2rem;
+          color: #0e1c36;
+        }
+      }
+    }
+  }
+
+  form {
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: 80%;
+      padding: 10px;
+      max-width: 400px;
+      label {
+        margin-bottom: 10px;
+      }
+    }
+    input {
+      flex-grow: 1;
+      outline: none;
+      background: rgba(14, 28, 54, 0.05);
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      max-width: 380px;
+      height: 1.5rem;
+    }
+    .row {
+      display: flex;
+      input {
+        border-radius: 5px 0px 0px 5px;
+        flex-grow: 9;
+      }
+      span {
+        flex-grow: 1;
+        outline: none;
+        background: rgba(14, 28, 54, 0.05);
+        border: none;
+        border-radius: 0px 5px 5px 0px;
+        padding: 10px 10px 10px 0px;
+        cursor: pointer;
+        height: 1.5rem;
+        color: #1a6fee;
+      }
+    }
+  }
+  .main-button {
+    color: white;
+    width: 80%;
+    max-width: 400px;
+    height: 2rem;
+    background-color: #1a6fee;
+    border-radius: 5px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+  }
+  .seperator {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8%;
+    margin-bottom: 1rem;
+    .line {
+      width: 7vw;
+      height: 0px;
+      opacity: 0.2;
+      border: 1px solid #0e1c36;
+    }
+
+    .or-text {
+      font-weight: 500;
+      font-size: 0.7rem;
+      opacity: 0.5;
+      color: #0e1c36;
+    }
+  }
+  .social-button {
+    color: #0e1c36;
+    width: 80%;
+    max-width: 400px;
+    font-weight: 500;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    border: solid black 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    outline: inherit;
+    margin-bottom: 1rem;
+  }
+  .caption {
+    font-size: 0.7rem;
+    font-weight: 300;
+    align-items: center;
+    color: #0e1c36;
+    display: flex;
+    flex-direction: row;
+    .button {
+      cursor: pointer;
+      color: #1a6fee;
+      margin-left: 10px;
+      font-weight: 400;
+    }
+  }
+  .right-section {
+    // background-image: url("../../assets/images/review-bg.png");
+    // background-size: cover;
+    background-color: #1a6fee;
+    flex: 1 1 400px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    .review-body {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    .customer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      .info {
+        display: flex;
+        gap: 10px;
+        max-width: 500px;
+        .profile {
+          .name {
+            max-width: 156px;
+            max-height: 36px;
+            font-family: "Poppins";
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 36px;
+            color: #fdfdfd;
+          }
+          .profession {
+            max-width: 100%;
+            flex-direction: row;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            .line {
+              width: 42px;
+              height: 0px;
+              border: 1px solid #fdfdfd;
+            }
+          }
+        }
+      }
+    }
+  }
+}

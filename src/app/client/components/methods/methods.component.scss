@@ -1,0 +1,100 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "../../../../../node_modules/bootstrap/scss/grid";
+.title {
+  background: whitesmoke;
+  padding: 10px 0;
+  font-family: "Roboto", sans-serif;
+}
+.bg {
+  background: whitesmoke;
+}
+.cont {
+  background-image: url("/assets/images/methods/methods-bg.jpg");
+  //background-color: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 280px;
+  padding: 60px 0;
+}
+.methods {
+  padding: 60px 0;
+  background-color: #eee;
+}
+.containers {
+  width: 90%;
+  margin: 0 auto;
+}
+// .row {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+// }
+
+.img {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.img img {
+  width: 100%;
+  height: 320px;
+  transition: all 0.3s ease;
+}
+.img img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.card {
+  top: -200px;
+  position: relative;
+  box-shadow: 0px 12px 30px 0px rgba(128, 127, 127, 0.34);
+}
+.description {
+  padding: 10px;
+}
+.description h2{
+  color: var(--blue-1);
+  font-weight: 700;
+}
+.description p{
+  color: rgb(54, 54, 54);
+}
+.btn-container{
+  width: 200px;
+  margin: 0 auto;
+  position: relative;
+  top: -100px;
+}
+
+@media screen and (max-width: 500px) {
+  .methods {
+    background-color: white;
+  }
+  .cont {
+    width: 100%;
+  }
+  .img img {
+    width: 100%;
+    height: 220px;
+  }
+  .img img:hover {
+    transform: none;
+  }
+  .card {
+    top: -250px;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  .img-2 {
+    display: none;
+  }
+  .img-3 {
+    display: none;
+  }
+  .img-4 {
+    display: none;
+  }
+}
