@@ -7,13 +7,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { RouterModule } from '@angular/router';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminClientComponent } from './admin-client/admin-client.component';
 import { AdminProductComponent } from './admin-product/admin-product.component';
 import { AdminCourseComponent } from './admin-course/admin-course.component';
 import { AdminOrderComponent } from './admin-order/admin-order.component';
-import { MatTable, MatTableModule } from '@angular/material/table';
+import {  MatTableModule } from '@angular/material/table';
+import {AuthInterceptorProvider} from "./auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -34,5 +34,6 @@ import { MatTable, MatTableModule } from '@angular/material/table';
     MatListModule,
     AdminRoutingModule,
   ],
+  providers:[AuthInterceptorProvider]
 })
 export class AdminModule {}
