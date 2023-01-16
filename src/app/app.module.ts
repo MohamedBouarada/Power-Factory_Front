@@ -18,8 +18,8 @@ import {
 import { LanguageInterceptor } from './language.interceptor';
 import { HttpLoaderFactory } from './translation.config';
 import { RouterModule } from '@angular/router';
-import {StoreModule} from "./store/store.module";
-
+import { StoreModule } from './store/store.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +32,7 @@ import {StoreModule} from "./store/store.module";
     ClientModule,
     CarouselModule,
     RouterModule,
+    AdminModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -40,7 +41,6 @@ import {StoreModule} from "./store/store.module";
       },
     }),
     StoreModule,
-
   ],
   providers: [
     HttpClient,
