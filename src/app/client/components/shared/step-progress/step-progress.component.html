@@ -1,0 +1,7 @@
+<section>
+  <div class="step-container">
+    <div *ngFor="let step of steps">
+      <div [ngClass]="step === 1 ? 'step-highlighted' : 'step'"></div>
+    </div>
+  </div>
+</section>

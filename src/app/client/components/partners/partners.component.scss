@@ -1,0 +1,29 @@
+@import "~bootstrap/scss/bootstrap.scss";
+.containers {
+  width: 90%;
+  margin: 0 auto 50px;
+}
+// .row {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   * {
+//     flex: 0 0 16.6%;
+//   }
+// }
+.partners img{
+  transition: all .3s ease;
+  height: 200px;
+  width: 100%;
+
+}
+
+.partners img:hover{
+  box-shadow: 0 0 10px 1px #dbdbdb;
+}
+@media screen and (max-width: 700px) {
+  .partners img{
+    height: 150px;
+  
+  }
+}
