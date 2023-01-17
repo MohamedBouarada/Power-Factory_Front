@@ -7,18 +7,28 @@
     <div class="vertical-stack">
       <div class="title">{{ "SIGNUP.CUSTOMER.STEP1.TITLE" | translate }}</div>
       <div class="form">
-        <form>
+        <form [formGroup]="form">
           <div class="form-field">
             <label>{{ "SIGNUP.CUSTOMER.STEP1.FIELD1" | translate }}</label>
-            <input type="email" matInput placeholder="e.g John Doe" />
+            <input
+              type="text"
+              formControlName="fullName"
+              matInput
+              placeholder="e.g John Doe"
+            />
           </div>
           <div class="form-field">
             <label>{{ "SIGNUP.CUSTOMER.STEP1.FIELD2" | translate }}</label>
-            <input type="tel" matInput placeholder="e.g. Johndoe@example.com" />
+            <input
+              type="email"
+              formControlName="email"
+              matInput
+              placeholder="e.g. Johndoe@example.com"
+            />
           </div>
         </form>
       </div>
-      <button class="main-button" (click)="nextStep()">
+      <button class="main-button" (click)="submit()">
         {{ "SIGNUP.CUSTOMER.STEP1.BUTTON.CONTINUE" | translate }}
       </button>
       <div class="seperator">
