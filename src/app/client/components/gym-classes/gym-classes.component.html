@@ -10,13 +10,13 @@
     <div
       class="card"
       *ngFor="
-        let class of this.listOfClasses | slice : 0 : this.numberOfClassesShown
+        let class of this.dataBaselistOfClasses
       "
       data-aos="fade-up"
       data-aos-duration="1500"
     >
       <div class="card-image">
-        <img src="{{ class.image }}" alt="class" />
+        <img src="{{imageBaseUrl}}/{{class!.photos[0].url}}" alt="class" />
       </div>
       <div class="card-info">
         <div class="date">
@@ -29,7 +29,38 @@
             {{ class.time }}
           </div>
         </div>
-        <h1 class="card-title">{{ class.title }}</h1>
+        <h1 class="card-title">{{ class.name }}</h1>
+        <p class="text">
+          {{ class.description }}
+        </p>
+        <div class="btnContainer">
+          <app-button btnName="Join Class" iconName="arrow_right"></app-button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="card"
+      *ngFor="
+        let class of this.listOfClasses | slice : 0 : this.numberOfClassesShown
+      "
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
+      <div class="card-image">
+        <img src="{{ class.photos![0].url }}" alt="class" />
+      </div>
+      <div class="card-info">
+        <div class="date">
+          <div class="day">
+            <mat-icon class="date-icon">calendar_today</mat-icon>
+            {{ class.date }}
+          </div>
+          <div class="time">
+            <mat-icon class="date-icon">watch_later</mat-icon>
+            {{ class.time }}
+          </div>
+        </div>
+        <h1 class="card-title">{{ class.name }}</h1>
         <p class="text">
           {{ class.description }}
         </p>
