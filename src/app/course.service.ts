@@ -35,4 +35,11 @@ export class CourseService {
   getAllCourses(){
     return this.http.get<IGetCourse>(environment.apiBaseUrl + "/course")
   }
+  addCourse(body:FormData | Object) {
+    return this.http.post(environment.apiBaseUrl + '/course',body,{
+      headers : {
+        'admin-flag' : 'true'
+      }
+    })
+  }
 }

@@ -23,7 +23,13 @@ export class AdminProductComponent implements OnInit {
 
   })
 
+  EditProductFormControl = new FormGroup({
+    name : new FormControl()
+  })
+
   files ?:FileList ;
+   isAddFormVisible: boolean=false;
+  isEditFormVisible=false;
   constructor(private _productService:ProductService ,private toastr: ToastrService) { }
 
   ngOnInit(): void {
@@ -65,6 +71,11 @@ export class AdminProductComponent implements OnInit {
       next : data=> {
         this.toastr.success('Product added')
         this.ProductFormControl.reset()
+        this._productService.getAllData().subscribe({
+          next:value => {
+            this.dataSource=value.data
+          }
+        })
       },
       error : err => {
         console.log(err)
@@ -73,5 +84,14 @@ export class AdminProductComponent implements OnInit {
     })
     console.log(formData)
 
+  }
+
+  setAddFormVisible(val:boolean) {
+    this.isAddFormVisible = val
+  }
+
+  setEditFormVisibility(val:boolean) {
+    this.isAddFormVisible = false;
+    this.isEditFormVisible = true;
   }
 }

@@ -24,6 +24,13 @@ export class AdminNavigationComponent {
   ) {}
 
   navigateToRoute(route: string) {
-    this.router.navigate(['admin', route]);
+
+      this.router.navigate(['admin', route]);
+
+  }
+
+  logout() {
+    localStorage.setItem('power-factory-admin-token' , '')
+    this.router.navigate(['home'])
   }
 }

@@ -41,6 +41,7 @@ const routes: Routes = [
         path: '4',
         component: AdminOrderComponent,
       },
+
       {
         path: '**',
         redirectTo: '1',

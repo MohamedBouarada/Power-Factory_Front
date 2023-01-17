@@ -1,6 +1,6 @@
-<main>
-  <div class="add">
-    <button mat-button>add</button>
+<main xmlns="http://www.w3.org/1999/html">
+  <div class="add" (click)="setAddFormVisible(!isAddFormVisible)">
+    <button mat-button>{{isAddFormVisible? 'CANCEL':'ADD'}}</button>
   </div>
   <table
     mat-table
@@ -46,5 +46,58 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
+
+
+  <div class="formContainer" *ngIf="isAddFormVisible">
+    <div class="form">
+      <form [formGroup]="CourseFormControl" (ngSubmit)="onSubmit()">
+        <div class="form-field">
+
+          <label>Name</label>
+          <div class="row">
+            <input
+              formControlName="name"
+              type="text"
+              matInput
+              placeholder=""
+            />
+          </div>
+        </div>
+        <div class="form-field">
+
+          <label>Description</label>
+          <div class="row">
+            <textarea
+              formControlName="description"
+              type="text"
+              matInput
+              placeholder=""
+              rows="10"
+              cols="50"
+            > </textarea>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Photos</label>
+          <div >
+            <input
+              type="file"
+              multiple="true"
+              placeholder=""
+              (change)="onFileSelected($event)"
+            />
+
+          </div>
+        </div>
+        <button class="main-button" mat-button  type="submit">
+          ADD
+        </button>
+        <button class="main-button" mat-button  (click)="setAddFormVisible(false)" >
+          CANCEL
+        </button>
+      </form>
+
+    </div>
+  </div>
 </main>
 

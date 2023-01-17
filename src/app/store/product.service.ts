@@ -127,7 +127,11 @@ export class ProductService {
   }
 
   addProduct(body:FormData | Object) {
-   return this.http.post(environment.apiBaseUrl + '/product',body)
+   return this.http.post(environment.apiBaseUrl + '/product',body , {
+     headers : {
+       'admin-flag' : 'true'
+     }
+   })
   }
 
 
