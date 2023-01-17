@@ -126,7 +126,9 @@ export class ProductService {
     return this.http.get<IProduct>(environment.apiBaseUrl + "/product/" +id)
   }
 
-
+  addProduct(body:FormData | Object) {
+   return this.http.post(environment.apiBaseUrl + '/product',body)
+  }
 
 
 }

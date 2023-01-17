@@ -14,6 +14,8 @@ import { AdminCourseComponent } from './admin-course/admin-course.component';
 import { AdminOrderComponent } from './admin-order/admin-order.component';
 import {  MatTableModule } from '@angular/material/table';
 import {AuthInterceptorProvider} from "./auth.interceptor";
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,17 +25,19 @@ import {AuthInterceptorProvider} from "./auth.interceptor";
     AdminCourseComponent,
     AdminOrderComponent,
   ],
-  imports: [
-    CommonModule,
-    LayoutModule,
-    MatTableModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    AdminRoutingModule,
-  ],
+    imports: [
+        CommonModule,
+        LayoutModule,
+        MatTableModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        AdminRoutingModule,
+        MatInputModule,
+      ReactiveFormsModule,
+    ],
   providers:[AuthInterceptorProvider]
 })
 export class AdminModule {}
