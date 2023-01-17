@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
@@ -15,8 +15,11 @@ export class LoginComponent {
   showPassword = false;
   rating = [1, 1, 1, 1, 1];
   loginFormControl = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4),
+    ]),
+    password: new FormControl('', [Validators.required]),
   });
   usernameFormControl = new FormControl('');
   constructor(
