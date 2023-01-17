@@ -7,34 +7,59 @@
     <div class="vertical-stack">
       <div class="title">{{ "SIGNUP.CUSTOMER.STEP2.TITLE" | translate }}</div>
       <div class="form">
-        <form>
+        <form [formGroup]="form">
           <div class="form-field">
             <label>{{ "SIGNUP.CUSTOMER.STEP2.FIELD1" | translate }}</label>
-            <input type="text" matInput placeholder="e.g. 234, Victoria Road" />
+            <input
+              formControlName="address"
+              type="text"
+              matInput
+              placeholder="e.g. 234, Victoria Road"
+            />
           </div>
           <div class="form-field split">
             <div class="col">
               <label>{{ "SIGNUP.CUSTOMER.STEP2.FIELD2" | translate }}</label>
-              <input type="select" matInput placeholder="Tunisia" />
+              <input
+                formControlName="country"
+                type="select"
+                matInput
+                placeholder="Tunisia"
+              />
             </div>
             <div class="col">
               <label>{{ "SIGNUP.CUSTOMER.STEP2.FIELD3" | translate }}</label>
-              <input type="select" matInput placeholder="Tunis" />
+              <input
+                formControlName="city"
+                type="select"
+                matInput
+                placeholder="Tunis"
+              />
             </div>
           </div>
           <div class="form-field split">
             <div class="col">
               <label>{{ "SIGNUP.CUSTOMER.STEP2.FIELD4" | translate }} </label>
-              <input matInput type="tel" placeholder="+ 216 " />
+              <input
+                formControlName="phone"
+                matInput
+                type="tel"
+                placeholder="+ 216 "
+              />
             </div>
             <div class="col">
               <label>{{ "SIGNUP.CUSTOMER.STEP2.FIELD5" | translate }}</label>
-              <input matInput type="select" placeholder="4500" />
+              <input
+                formControlName="zip"
+                matInput
+                type="select"
+                placeholder="4500"
+              />
             </div>
           </div>
         </form>
       </div>
-      <button class="main-button" (click)="nextStep()">
+      <button class="main-button" (click)="submit()">
         {{ "SIGNUP.CUSTOMER.STEP2.BUTTON" | translate }}
       </button>
       <div class="caption">

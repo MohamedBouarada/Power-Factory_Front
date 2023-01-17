@@ -7,13 +7,14 @@
     <div class="vertical-stack">
       <div class="title">{{ "SIGNUP.CUSTOMER.STEP3.TITLE" | translate }}</div>
       <div class="form">
-        <form>
+        <form [formGroup]="passwordFormControl">
           <div class="form-field">
             <label>{{ "SIGNUP.CUSTOMER.STEP3.FIELD1" | translate }}</label>
             <div class="row">
               <input
                 [type]="showPassword[0] ? 'text' : 'password'"
                 matInput
+                formControlName="password"
                 placeholder="*****"
               />
               <span (click)="toggleShowPassword(0)">
@@ -21,22 +22,31 @@
               </span>
             </div>
           </div>
+          <mat-error
+            *ngIf="passwordFormControl.get('password').hasError('required')"
+          >
+            password is required
+          </mat-error>
           <div class="form-field">
             <label>{{ "SIGNUP.CUSTOMER.STEP3.FIELD2" | translate }}</label>
             <div class="row">
               <input
                 [type]="showPassword[1] ? 'text' : 'password'"
                 matInput
+                formControlName="confirmPassword"
                 placeholder="*****"
               />
               <span (click)="toggleShowPassword(1)">
                 {{ showPassword[1] ? "Hide" : "Show" }}
               </span>
             </div>
+            <mat-error *ngIf="confirm.hasError('mismatch')"
+              >Password does not match the confirm password</mat-error
+            >
           </div>
         </form>
       </div>
-      <button class="main-button">
+      <button (click)="signUp()" class="main-button">
         {{ "SIGNUP.CUSTOMER.STEP3.BUTTON" | translate }}
       </button>
       <div class="caption">

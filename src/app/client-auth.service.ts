@@ -6,6 +6,14 @@ export interface IClientLogin {
   username: string;
   password: string;
 }
+
+export interface IClientSignup {
+  username: string;
+  password: string;
+  firstname: string;
+  lastname: string;
+  telephone: number;
+}
 export interface ILoginResponse {
   access_token: string;
 }
@@ -21,5 +29,10 @@ export class ClientAuthService {
       environment.apiBaseUrl + '/auth/log-in/',
       client
     );
+  }
+  signup(client: IClientSignup) {
+    console.log('in sign upppp');
+    console.log(client);
+    return this.http.post(environment.apiBaseUrl + '/auth/sign-up/', client);
   }
 }

@@ -18,7 +18,7 @@ export class LoginComponent {
     username: new FormControl(''),
     password: new FormControl(''),
   });
-  usernameFormControl = new FormControl('');
+
   constructor(
     private readonly translateService: TranslateService,
     private readonly router: Router,
