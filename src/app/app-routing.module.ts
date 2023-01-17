@@ -16,6 +16,8 @@ import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 import { ProgramsComponent } from './client/pages/programs/programs.component';
 import { CoachesComponent } from './client/pages/coaches/coaches.component';
 import { NotfoundComponent } from './client/pages/notfound/notfound.component';
+import { UserGuard } from './user.guard';
+import { AdminGuard } from './admin.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,6 +27,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminNavigationComponent,
+    canActivate: [AdminGuard],
     children: [
       {
         path: '1',
@@ -72,8 +75,7 @@ const routes: Routes = [
     component: CustomerStep3Component,
     pathMatch: 'full',
   },
-
-  { path: 'store', component: StorePageComponent },
+  { path: 'store', component: StorePageComponent, canActivate: [UserGuard] },
   { path: 'product/:id', component: ProductDetailsPageComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
