@@ -15,6 +15,8 @@ import { AdminCourseComponent } from './admin/admin-course/admin-course.componen
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 import { ProgramsComponent } from './client/pages/programs/programs.component';
 import { CoachesComponent } from './client/pages/coaches/coaches.component';
+import { ClientNavigationComponent } from './client/pages/dashboard/client-navigation/client-navigation.component';
+import { ClientOrderComponent } from './client/pages/dashboard/client-order/client-order.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -42,6 +44,20 @@ const routes: Routes = [
         component: AdminOrderComponent,
       },
 
+      {
+        path: '**',
+        redirectTo: '1',
+      },
+    ],
+  },
+  {
+    path: 'client',
+    component: ClientNavigationComponent,
+    children: [
+      {
+        path: '1',
+        component: ClientOrderComponent,
+      },
       {
         path: '**',
         redirectTo: '1',
