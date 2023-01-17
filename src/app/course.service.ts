@@ -7,6 +7,8 @@ export interface ICourse {
   id:string;
   name:string;
   description:string;
+  date:string;
+  time:string;
   createdAt:string;
   updatedAt:string;
   deletedAt:string|null;
