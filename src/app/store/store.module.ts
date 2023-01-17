@@ -22,6 +22,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { BucketListComponent } from './bucket-list/bucket-list.component';
 import { BucketElementComponent } from './bucket-element/bucket-element.component';
+import { NavbarComponent } from '../client/components/navbar/navbar.component';
+import { ClientModule } from '../client/client.module';
 
 @NgModule({
   declarations: [
@@ -49,8 +51,8 @@ import { BucketElementComponent } from './bucket-element/bucket-element.componen
     MatInputModule,
     MatExpansionModule,
     MatDividerModule,
-    MatListModule
-
+    MatListModule,
+    ClientModule
   ]
 })
 export class StoreModule { }

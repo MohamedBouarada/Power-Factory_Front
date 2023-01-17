@@ -54,7 +54,7 @@ export class StorePageComponent implements OnInit {
     _searchService.dataChange.subscribe(data => {
       this.dataSource.data = data;
     });
-   this._productService.getAllData()
+   //this._productService.getAllData()
    this.storeData= this._productService.storeData
     this.storeDataOrder = this._productService.order
   }

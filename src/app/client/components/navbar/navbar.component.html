@@ -3,15 +3,73 @@
     <div class="image">
       <img src="/assets/images/logos/logo-8.png" alt="Product" />
     </div>
-    <div [ngClass]="{'mobile-menu':this.isMobile}" class="navLinks">
+    <div [ngClass]="{ 'mobile-menu': this.isMobile }" class="navLinks">
       <ul>
-        <li><a href="#" class="link" [routerLink]="['/']"  routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact:true}" (click)="hideMenu()">Home</a></li>
-        <li><a href="#" class="link" [routerLink]="['/programs']" routerLinkActive="active" (click)="hideMenu()">Programs</a></li>
-        <li><a href="#" class="link" [routerLink]="['/coaches']" routerLinkActive="active" (click)="hideMenu()">Coaches</a></li>
-        <li><a href="#" class="link" [routerLink]="['/store']" routerLinkActive="active" (click)="hideMenu()">Shop</a></li>
-        <li><a href="#" class="link" [routerLink]="['/']" routerLinkActive="active" (click)="hideMenu()">Contact</a></li>
-        <li><a href="#" class="joinButton" [routerLink]="['/']" routerLinkActive="active" (click)="onClickLogin()">Join now</a></li>
+        <li>
+          <a
+            href="#"
+            class="link"
+            [routerLink]="['/']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="hideMenu()"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="link"
+            [routerLink]="['/programs']"
+            routerLinkActive="active"
+            (click)="hideMenu()"
+            >Programs</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="link"
+            [routerLink]="['/coaches']"
+            routerLinkActive="active"
+            (click)="hideMenu()"
+            >Coaches</a
+          >
+        </li>
+        <li>
+          <a
+          [matBadge]="badge"
+          [matBadgeHidden]="badge==0"
+            href="#"
+            class="link"
+            [routerLink]="['/store']"
+            routerLinkActive="active"
+            (click)="hideMenu()"
+            >Shop</a
+          >
+        </li>
+        <li><a class="link" (click)="scrollToContact()">Contact</a></li>
+        <li *ngIf="!isAdminLogged && !isClientLogged">
+          <a
+            href="#"
+            class="joinButton"
+            [routerLink]="['/']"
+            routerLinkActive="active"
+            (click)="onClickLogin()"
+            >Join now</a
+          >
+        </li>
+        <li *ngIf="isClientLogged || isAdminLogged">
+          <a
+            
+            class="joinButton"
+            
+            (click)="goToDashboard()"
+            ><mat-icon class="icon">
+              perm_identity
+            </mat-icon></a
+          >
+        </li>
       </ul>
       <!-- <button class="joinButton">Join now</button> -->
     </div>

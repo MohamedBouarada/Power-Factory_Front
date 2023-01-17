@@ -1,14 +1,18 @@
 <section class="promo-products">
   <div class="containers">
-    <app-title description="The Best Seller Of Hitheme" title1="Best" title2="Seller" ></app-title>
-      <owl-carousel-o [options]="customOptions" class="carousel">
-        <ng-template carouselSlide *ngFor="let product of this.listOfProducts" >
-          <div class="card" data-aos="fade-up">
-            <div class="card-main">
-              <div class="discount">{{ product.discount }}%</div>
-              <div class="label label-green">Pre-order</div>
-              <div class="product-container">
-                <!-- <div
+    <app-title
+      description="The Best Seller Of Hitheme"
+      title1="Best"
+      title2="Seller"
+    ></app-title>
+    <owl-carousel-o [options]="customOptions" class="carousel">
+      <ng-template carouselSlide *ngFor="let product of this.listOfProducts">
+        <div class="card" data-aos="fade-up">
+          <div class="card-main">
+            <div class="discount">{{ product.discount }}%</div>
+            <div class="label label-green">Pre-order</div>
+            <div class="product-container">
+              <!-- <div
                   class="p"
                   (mouseover)="imageChange($event, product)"
                   (mouseleave)="getFirstImage(product)"
@@ -16,53 +20,61 @@
                 >
                   <img src="{{ image }}" alt="Product" />
                 </div> -->
-              </div>
-              <div class="image">
-                <img src="{{ product.principaleImage }}" alt="Product" />
-              </div>
-              <div class="cart-line"></div>
-              <div class="cart-item">
-                <ul>
-                  <li>
-                    <a href=""><i class="fa fa-shopping-basket"></i></a>
-                  </li>
-                  <li>
-                    <a href=""><i class="fa fa-heart"></i></a>
-                  </li>
-                  <li>
-                    <a href=""><i class="fa fa-search"></i></a>
-                  </li>
-                </ul>
+              <div class="product-container">
+                <div
+                  class="p"
+                  (mouseover)="imageChange($event, product)"
+                  (mouseleave)="getFirstImage(product)"
+                  *ngFor="let image of product.otherImages"
+                >
+                  <img src="{{ image }}" alt="Product" />
+                </div>
               </div>
             </div>
-            <div class="content">
-              <a href="javascript:void(0);">{{ product.name }}</a>
-              <br />
-              <span class="rating" *ngFor="let star of this.stars">
-                <div
-                  *ngIf="
-                    star <= product.rating;
-                    then contenu_bon;
-                    else contenu_pas_bon
-                  "
-                ></div>
-                <ng-template #contenu_bon
-                  ><i class="fa fa-star"></i
-                ></ng-template>
-                <ng-template #contenu_pas_bon
-                  ><i class="fa fa-star-o"></i
-                ></ng-template>
-              </span>
-              <p>
-                <span class="money">${{ product.newPrice }}</span
-                ><span class="price-old">${{ product.oldPrice }}</span>
-              </p>
+            <div class="image">
+              <img src="{{ product.principaleImage }}" alt="Product" />
+            </div>
+            <div class="cart-line"></div>
+            <div class="cart-item">
+              <ul>
+                <li>
+                  <a href=""><i class="fa fa-shopping-basket"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa fa-heart"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa fa-search"></i></a>
+                </li>
+              </ul>
             </div>
           </div>
-        </ng-template>
-      </owl-carousel-o>
+          <div class="content">
+            <a href="javascript:void(0);">{{ product.name }}</a>
+            <br />
+            <span class="rating" *ngFor="let star of this.stars">
+              <div
+                *ngIf="
+                  star <= product.rating;
+                  then contenu_bon;
+                  else contenu_pas_bon
+                "
+              ></div>
+              <ng-template #contenu_bon><i class="fa fa-star"></i></ng-template>
+              <ng-template #contenu_pas_bon
+                ><i class="fa fa-star-o"></i
+              ></ng-template>
+            </span>
+            <p>
+              <span class="money">${{ product.newPrice }}</span
+              ><span class="price-old">${{ product.oldPrice }}</span>
+            </p>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
 
-      <!-- <div class="col-md-3">
+    <!-- <div class="col-md-3">
                 <div class="card">
                     <div class="card-main">
                         <div class="discount">-10%</div>
@@ -167,6 +179,5 @@
                     </div>
                 </div>
             </div> -->
-    
   </div>
 </section>

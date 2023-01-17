@@ -13,12 +13,14 @@
   text-align: center;
   cursor: pointer;
   transition: 0.3s;
+  height: 500px;
 }
 
 .card-container img {
 
   border-bottom: white 2px solid;
   border-radius: 15px;
+  height: 380px;
 }
 
 .mat-card-header {
@@ -39,4 +41,12 @@
 
 .mat-icon:hover {
   color: var(--red);
+}
+@media (max-width: 575.98px) {
+  .card-container{
+    height: 400px;
+  }
+  .card-container img{
+    height: 300px;
+  }
 }

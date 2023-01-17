@@ -42,6 +42,7 @@ export class AdminProductComponent implements OnInit {
     this._productService.getAllData().subscribe({
       next:value => {
         this.dataSource=value.data
+        console.log(this.dataSource)
       }
     })
   }
