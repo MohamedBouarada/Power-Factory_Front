@@ -12,7 +12,7 @@ export class ClientOrderComponent implements OnInit {
   constructor(private _orderService: OrderService) {}
 
   ngOnInit(): void {
-    this._orderService.getAll().subscribe({
+    this._orderService.getAllByUser().subscribe({
       next: (data) => {
         this.dataSource = data;
       },
