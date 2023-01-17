@@ -42,4 +42,16 @@ export class CourseService {
       }
     })
   }
+
+  getOneCourse(id:number) {
+     return this.http.get<ICourse>(environment.apiBaseUrl +"/course/" + id)
+  }
+
+  editCourse(id:number,body:Object){
+    return this.http.patch(environment.apiBaseUrl + '/course/' + id , body ,{
+      headers : {
+        'admin-flag': 'true'
+      }
+    })
+  }
 }

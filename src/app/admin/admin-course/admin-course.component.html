@@ -38,7 +38,7 @@
     <!-- Edit Column -->
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef>Edit</th>
-      <td mat-cell *matCellDef="let element" (click)="editElement(element)">
+      <td mat-cell *matCellDef="let element" (click)="setEditFormVisibility(true,element.id)">
         <mat-icon class="clickable">edit</mat-icon>
       </td>
     </ng-container>
@@ -93,6 +93,49 @@
           ADD
         </button>
         <button class="main-button" mat-button  (click)="setAddFormVisible(false)" >
+          CANCEL
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+
+
+  <div class="formContainer" *ngIf="isEditFormVisible">
+    <div class="form">
+      <form [formGroup]="EditCourseFormControl" (ngSubmit)="onEditSubmit()">
+        <div class="form-field">
+
+          <label>Name</label>
+          <div class="row">
+            <input
+              formControlName="name"
+              type="text"
+              matInput
+              placeholder=""
+            />
+          </div>
+        </div>
+        <div class="form-field">
+
+          <label>Description</label>
+          <div class="row">
+            <textarea
+              formControlName="description"
+              type="text"
+              matInput
+              placeholder=""
+              rows="10"
+              cols="50"
+            > </textarea>
+          </div>
+        </div>
+
+        <button class="main-button" mat-button  type="submit">
+          EDIT
+        </button>
+        <button class="main-button" mat-button  (click)="setEditFormVisibility(false , -1)" >
           CANCEL
         </button>
       </form>
