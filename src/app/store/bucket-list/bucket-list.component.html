@@ -20,5 +20,16 @@
       Total: ${{totalList}}
     </div>
 
+    <div *ngIf="bucketList.length>0">
+      <div class="addressContainer">
+        <div>
+        <label>Address</label>
+        </div>
+      <input type="text" matInput (change)="changeAddress(address.value)" #address class="addressInput">
+      </div>
+      <button mat-button (click)="checkout()">
+        Order
+      </button>
+    </div>
   </mat-drawer>
 </div>

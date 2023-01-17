@@ -14,17 +14,22 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
-    console.log('here in interceptor',request)
-    const newReq =  request.clone({
-      /*
-      headers: new HttpHeaders({...request.headers ,
-        'Authorization': 'bearer '+localStorage.getItem('power-factory-admin-token')})
-        */
-       headers: request.headers.set("Authorization","bearer "+localStorage.getItem('power-factory-admin-token'))
-    })
-    console.log(newReq)
-    return next.handle(newReq);
-  }
+
+    if (request.headers.has("admin-flag")) {
+      //console.log('here in interceptor',request)
+      const newReq =  request.clone({
+        /*
+        headers: new HttpHeaders({...request.headers ,
+          'Authorization': 'bearer '+localStorage.getItem('power-factory-admin-token')})
+          */
+        headers: request.headers.set("Authorization","bearer "+localStorage.getItem('power-factory-admin-token'))
+      })
+     // console.log(newReq)
+      return next.handle(newReq);
+
+    }
+    return next.handle(request)
+     }
 }
 
 export const AuthInterceptorProvider = {
