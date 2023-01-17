@@ -35,7 +35,15 @@ import { CustomerStep1Component } from './pages/signup/client/step-1/customer-st
 import { CustomerStep2Component } from './pages/signup/client/step-2/customer-step2.component';
 import { CustomerStep3Component } from './pages/signup/client/step-3/customer-step3.component';
 import { ClientRoutingModule } from './client-routing.module';
-import {ClientAuthInterceptorProvider} from "./client.interceptor";
+import { ClientAuthInterceptorProvider } from './client.interceptor';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { ClientNavigationComponent } from './pages/dashboard/client-navigation/client-navigation.component';
+import { ClientOrderComponent } from './pages/dashboard/client-order/client-order.component';
 
 @NgModule({
   declarations: [
@@ -61,15 +69,16 @@ import {ClientAuthInterceptorProvider} from "./client.interceptor";
     CardComponent,
     ScrollAnimationDirectiveDirective,
     NavbarDirective,
-
     LoginComponent,
     SignupComponent,
     StepProgressComponent,
     CustomerStep1Component,
     CustomerStep2Component,
     CustomerStep3Component,
+    ClientNavigationComponent,
+    ClientOrderComponent,
   ],
-  exports: [NavbarComponent,FooterComponent],
+  exports: [NavbarComponent, FooterComponent],
   imports: [
     CommonModule,
     AppRoutingModule,
@@ -77,6 +86,12 @@ import {ClientAuthInterceptorProvider} from "./client.interceptor";
     BrowserAnimationsModule,
     MaterialModule,
     CarouselModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
     // ClientRoutingModule
 
     ReactiveFormsModule,
@@ -85,6 +100,6 @@ import {ClientAuthInterceptorProvider} from "./client.interceptor";
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers : [ClientAuthInterceptorProvider]
+  providers: [ClientAuthInterceptorProvider],
 })
 export class ClientModule {}
