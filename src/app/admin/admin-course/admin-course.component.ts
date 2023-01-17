@@ -16,12 +16,20 @@ import {ToastrService} from "ngx-toastr";
 export class AdminCourseComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'description', 'delete', 'edit'];
   dataSource:ICourse[]=[];
+  editCourse:ICourse = null
   isAddFormVisible=false
   CourseFormControl=new FormGroup({
     name : new FormControl(''),
     description : new FormControl('')
   });
   files ?:FileList ;
+  isEditFormVisible= false;
+
+
+  EditCourseFormControl = new FormGroup({
+    name: new FormControl(),
+    description : new FormControl()
+  });
 
   constructor(private _courseService:CourseService , private  toastr:ToastrService) { }
 
@@ -77,6 +85,44 @@ export class AdminCourseComponent implements OnInit {
     const file: FileList = input.files
     if(file && file.length>0) {
       this.files = file
+    }
+  }
+
+  onEditSubmit() {
+    this._courseService.editCourse(parseInt(this.editCourse!.id) , this.EditCourseFormControl.value)
+      .subscribe({
+        next : data => {
+          this.toastr.success('Course updated successfully'),
+            this.EditCourseFormControl.reset()
+          this.isEditFormVisible = false,
+            this._courseService.getAllCourses().subscribe({
+              next:value => {
+                this.dataSource=value.data
+              }
+            })
+        },
+        error : err=> this.toastr.error(err.error.message)
+      })
+  }
+
+  setEditFormVisibility(bool: boolean , id:number) {
+    if(bool) {
+      this.isAddFormVisible = false;
+      this._courseService.getOneCourse(id).subscribe({
+        next : data => {
+          console.log(data)
+          this.editCourse = data
+          const {name,description} = this.editCourse!
+          this.EditCourseFormControl.get('name').setValue(name)
+          this.EditCourseFormControl.get('description').setValue(description)
+
+
+          this.isEditFormVisible = true;
+        },
+        error : err=>console.log(err)
+      })
+    }else{
+      this.isEditFormVisible = false
     }
   }
 }
