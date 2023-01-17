@@ -16,6 +16,7 @@ export interface IClientSignup {
 }
 export interface ILoginResponse {
   access_token: string;
+  role:string;
 }
 
 @Injectable({

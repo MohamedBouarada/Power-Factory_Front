@@ -43,12 +43,23 @@ export class LoginComponent {
       .subscribe({
         next: (response) => {
           console.log(response);
+          if (response.role == 'User') {
+
+
           localStorage.setItem(
             'power-factory-client-token',
             response['access_token'].toString()
           );
           console.log(localStorage.getItem('power-factory-client-token'));
-          this.router.navigate(['home']);
+          this.router.navigate(['client']);
+        }else {
+            localStorage.setItem(
+              'power-factory-admin-token',
+              response['access_token'].toString()
+            );
+            console.log(localStorage.getItem('power-factory-client-token'));
+            this.router.navigate(['admin']);
+          }
         },
         error: (error) => {
           console.log(error);
