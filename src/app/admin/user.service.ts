@@ -25,6 +25,10 @@ export class UserService {
   constructor( private http:HttpClient) { }
 
   getAllUsers(){
-     return this.http.get<IUser[]>(environment.apiBaseUrl + "/user")
+     return this.http.get<IUser[]>(environment.apiBaseUrl + "/user",{
+        headers : {
+          'admin-flag' : 'true'
+        }
+     })
   }
 }

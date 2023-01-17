@@ -21,9 +21,10 @@ import { RouterModule } from '@angular/router';
 import { StoreModule } from './store/store.module';
 import { AdminModule } from './admin/admin.module';
 import { ToastrModule } from 'ngx-toastr';
+import { DefualtImagePipe } from './defualt-image.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DefualtImagePipe],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -33,7 +34,7 @@ import { ToastrModule } from 'ngx-toastr';
     ClientModule,
     CarouselModule,
     RouterModule,
-    AdminModule,
+    AdminModule.forRoot(),
     FormsModule,
     ToastrModule.forRoot(),
     ReactiveFormsModule,

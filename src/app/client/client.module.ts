@@ -17,7 +17,6 @@ import { MethodsComponent } from './components/methods/methods.component';
 import { ButtonComponent } from './components/shared/button/button.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProgramsComponent } from './pages/programs/programs.component';
-// import { ClientRoutingModule } from './client-routing.module';
 import { DefaultLandingImagePipe } from './pipes/default-landing-image.pipe';
 import { GymClassesComponent } from './components/gym-classes/gym-classes.component';
 import { GymProgramsComponent } from './components/gym-programs/gym-programs.component';
@@ -31,14 +30,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LanguageInterceptor } from '../language.interceptor';
 import { StepProgressComponent } from './components/shared/step-progress/step-progress.component';
 import { CustomerStep1Component } from './pages/signup/client/step-1/customer-step1.component';
 import { CustomerStep2Component } from './pages/signup/client/step-2/customer-step2.component';
 import { CustomerStep3Component } from './pages/signup/client/step-3/customer-step3.component';
-import { RouterModule } from '@angular/router';
 import { ClientRoutingModule } from './client-routing.module';
+import {ClientAuthInterceptorProvider} from "./client.interceptor";
 
 @NgModule({
   declarations: [
@@ -64,7 +61,7 @@ import { ClientRoutingModule } from './client-routing.module';
     CardComponent,
     ScrollAnimationDirectiveDirective,
     NavbarDirective,
-  
+
     LoginComponent,
     SignupComponent,
     StepProgressComponent,
@@ -81,12 +78,13 @@ import { ClientRoutingModule } from './client-routing.module';
     MaterialModule,
     CarouselModule,
     // ClientRoutingModule
-  
+
     ReactiveFormsModule,
     CarouselModule,
     TranslateModule,
     FormsModule,
     ReactiveFormsModule,
   ],
+  providers : [ClientAuthInterceptorProvider]
 })
 export class ClientModule {}

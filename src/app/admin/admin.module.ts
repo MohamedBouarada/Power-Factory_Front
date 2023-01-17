@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminNavigationComponent } from './admin-navigation/admin-navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -38,6 +38,13 @@ import {ReactiveFormsModule} from "@angular/forms";
         MatInputModule,
       ReactiveFormsModule,
     ],
-  providers:[AuthInterceptorProvider]
+  providers:[]
 })
-export class AdminModule {}
+export class AdminModule {
+  static forRoot() : ModuleWithProviders<any>{
+    return {
+      ngModule:AdminModule,
+      providers:[AuthInterceptorProvider]
+    }
+  }
+}

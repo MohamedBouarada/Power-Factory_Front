@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IBucket, OrderService} from "../order.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-bucket-list',
@@ -16,9 +17,10 @@ export class BucketListComponent implements OnInit {
 
   isCartEmpty?:number ;
   totalList: number =0;
+  private _address: string="";
 
 
-  constructor(private _orderService:OrderService) { }
+  constructor(private _orderService:OrderService , private _toastr:ToastrService) { }
 
   ngOnInit(): void {
 
@@ -40,8 +42,14 @@ export class BucketListComponent implements OnInit {
   }
 
 
+  checkout() {
+    this._orderService.checkout(this._address , this.bucketList).subscribe({
+      next:data => this._toastr.success('products ordered successfully'),
+      error : err => this._toastr.error(err.error.message)
+    })
+  }
 
-
-
-
+  changeAddress(value: string) {
+    this._address = value
+  }
 }

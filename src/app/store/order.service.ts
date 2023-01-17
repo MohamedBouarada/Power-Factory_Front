@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {IProduct} from "./product.service";
 import {BehaviorSubject, observable, Observable, Subject} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 
 
@@ -10,6 +12,17 @@ export interface IBucket {
   quantity:number,
   price:number,
   total:number
+}
+
+export interface  IGetOrders {
+  id:number ,
+  status:string,
+  createdAt:string,
+  updatedAt:string,
+  deletedAt:string|null,
+  address:string,
+  price:string,
+  userId:string,
 }
 
 @Injectable({
@@ -42,7 +55,7 @@ export class OrderService {
   set bucket(val:IBucket[]){
     this._bucket=val
   }
-  constructor() {
+  constructor(private http:HttpClient) {
     //this.emitBucketListChange()
   }
 
@@ -65,6 +78,27 @@ export class OrderService {
 
     }
 
+    checkout(address:string , products:IBucket[]){
+
+    const orderProduct = products.map((element)=>{
+      return{
+        id:element.id , quantity :element.quantity
+      }
+    })
+    const body = {
+      address,
+      products :orderProduct
+    }
+      return this.http.post(environment.apiBaseUrl +"/order",body)
+    }
+
+    getAll() {
+    return this.http.get<IGetOrders[]>(environment.apiBaseUrl +'/order' , {
+      headers : {
+      'admin-flag' : 'true'
+      }
+    })
+    }
 
 
 
