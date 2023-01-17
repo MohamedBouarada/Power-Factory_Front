@@ -78,7 +78,7 @@ import { ClientOrderComponent } from './pages/dashboard/client-order/client-orde
     ClientNavigationComponent,
     ClientOrderComponent,
   ],
-  exports: [NavbarComponent, FooterComponent],
+  exports: [NavbarComponent, FooterComponent,VideoComponent],
   imports: [
     CommonModule,
     AppRoutingModule,

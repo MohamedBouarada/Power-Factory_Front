@@ -4,6 +4,7 @@ import {productListData} from "../product-list/data";
 import {ActivatedRoute, Router} from '@angular/router';
 import {environment} from "../../../environments/environment";
 import {OrderService} from "../order.service";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-details-page',
@@ -19,7 +20,8 @@ export class ProductDetailsPageComponent implements OnInit {
   quantity=1
   imageBaseUrl = environment.apiBaseUrl
   constructor( private router:ActivatedRoute , private _productService:ProductService , private goBackRouter:Router,
-               private _orderService:OrderService) {
+               private _orderService:OrderService, 
+               private toastr:ToastrService) {
     this.router.params.subscribe(params=>{this.id=params['id']})
   }
 
@@ -39,7 +41,9 @@ export class ProductDetailsPageComponent implements OnInit {
   }
 
   addElementToCart(){
+
     this._orderService.add(this.product! , this.quantity)
+    this.toastr.success("product added to cart")
   }
   setValue(val:string){
     this.quantity = parseInt(val) ;

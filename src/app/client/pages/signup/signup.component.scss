@@ -7,7 +7,7 @@
   .right-section {
     // background-image: url("../../../../assets/images/logos/logo-3.png");
     // background-size: cover;
-    background-color: #1a6fee;
+    background-color: var(--blue-1);
     flex: 1 1 400px;
     width: 100%;
     height: 100%;
@@ -86,7 +86,7 @@
         width: 90%;
         max-width: 400px;
         height: 2rem;
-        background-color: #1a6fee;
+        background-color: var(--blue-1);
         border-radius: 5px;
         border: none;
         padding: 0;
@@ -141,12 +141,12 @@
         .icon {
           path {
             transition: 1000ms ease-in-out linear;
-            fill: #1a6fee;
+            fill: var(--blue-1);
           }
         }
       }
       .radio-section.highlighted {
-        border: #1a6fee solid 2px;
+        border: var(--blue-1) solid 2px;
       }
     }
     .caption {
@@ -159,9 +159,10 @@
     }
     .log-in {
       cursor: pointer;
-      color: #1a6fee;
+      color: var(--blue-1);
       margin-left: 10px;
-      font-weight: 400;
+      font-weight: 600;
+      font-size: 1.7em;
     }
   }
 }
