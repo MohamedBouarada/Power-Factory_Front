@@ -12,6 +12,7 @@ export class AdminProductComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'price', 'delete', 'edit'];
   dataSource: IProduct[] = []
+  editProduct : IProduct = null
   ProductFormControl = new FormGroup({
     name: new FormControl('') ,
     description : new FormControl(''),
@@ -24,7 +25,12 @@ export class AdminProductComponent implements OnInit {
   })
 
   EditProductFormControl = new FormGroup({
-    name : new FormControl()
+    name: new FormControl('') ,
+    description : new FormControl(''),
+    brand : new FormControl(''),
+    price : new FormControl(''),
+    availability : new FormControl(''),
+    number: new FormControl(''),
   })
 
   files ?:FileList ;
@@ -42,9 +48,7 @@ export class AdminProductComponent implements OnInit {
   deleteElement(elemnt: any) {
     console.log('here');
   }
-  editElement(elemnt: any) {
-    console.log('here');
-  }
+
 
   onFileSelected(event:Event) {
     const input =  event.target as HTMLInputElement
@@ -90,8 +94,46 @@ export class AdminProductComponent implements OnInit {
     this.isAddFormVisible = val
   }
 
-  setEditFormVisibility(val:boolean) {
-    this.isAddFormVisible = false;
-    this.isEditFormVisible = true;
+  setEditFormVisibility(val:boolean , id:number) {
+    if(val) {
+      this.isAddFormVisible = false;
+      this._productService.getOneProduct(id).subscribe({
+        next : data => {
+          console.log(data)
+          this.editProduct = data
+          const {name,description,price ,availability,number,brand} = this.editProduct!
+          this.EditProductFormControl.get('name').setValue(name)
+          this.EditProductFormControl.get('description').setValue(description)
+          this.EditProductFormControl.get('price').setValue(price)
+          this.EditProductFormControl.get('availability').setValue(availability)
+          this.EditProductFormControl.get('number').setValue(number)
+          this.EditProductFormControl.get('brand').setValue(brand)
+
+          this.isEditFormVisible = true;
+        },
+        error : err=>console.log(err)
+      })
+    }else{
+      this.isEditFormVisible = false
+    }
   }
+
+  onEditSubmit(){
+    console.log(this.EditProductFormControl.value)
+    this._productService.editProduct(this.editProduct!.id , this.EditProductFormControl.value)
+      .subscribe({
+        next : data => {
+          this.toastr.success('Product updated successfully'),
+            this.EditProductFormControl.reset()
+          this.isEditFormVisible = false,
+            this._productService.getAllData().subscribe({
+              next:value => {
+                this.dataSource=value.data
+              }
+            })
+        },
+        error : err=> this.toastr.error(err.error.message)
+      })
+  }
+
 }

@@ -134,5 +134,13 @@ export class ProductService {
    })
   }
 
+  editProduct(id:number,body:Object) {
+   return this.http.patch(environment.apiBaseUrl + '/product/'+ id ,body , {
+     headers : {
+       'admin-flag' : 'true'
+     }
+   })
+  }
+
 
 }
