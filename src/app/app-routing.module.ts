@@ -15,6 +15,7 @@ import { AdminCourseComponent } from './admin/admin-course/admin-course.componen
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 import { ProgramsComponent } from './client/pages/programs/programs.component';
 import { CoachesComponent } from './client/pages/coaches/coaches.component';
+import { NotfoundComponent } from './client/pages/notfound/notfound.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -49,6 +50,10 @@ const routes: Routes = [
     ],
   },
   {
+    path: 'notfound',
+    component: NotfoundComponent,
+  },
+  {
     path: 'signup',
     component: SignupComponent,
   },
@@ -74,7 +79,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{scrollPositionRestoration:'enabled'})],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

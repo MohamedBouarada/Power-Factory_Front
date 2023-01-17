@@ -36,6 +36,7 @@ import { CustomerStep2Component } from './pages/signup/client/step-2/customer-st
 import { CustomerStep3Component } from './pages/signup/client/step-3/customer-step3.component';
 import { ClientRoutingModule } from './client-routing.module';
 import {ClientAuthInterceptorProvider} from "./client.interceptor";
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import {ClientAuthInterceptorProvider} from "./client.interceptor";
     CustomerStep1Component,
     CustomerStep2Component,
     CustomerStep3Component,
+    NotfoundComponent,
   ],
   exports: [NavbarComponent,FooterComponent],
   imports: [
