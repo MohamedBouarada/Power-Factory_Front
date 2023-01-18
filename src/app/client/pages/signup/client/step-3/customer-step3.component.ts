@@ -116,7 +116,7 @@ export class CustomerStep3Component implements OnInit {
 
             // this.signupFormProvider.password =
             //   this.passwordFormControl.get('password').value;25
-            this.router.navigate(['home']);
+            this.router.navigate(['']);
           },
           error: (error) => {
             console.log(error);

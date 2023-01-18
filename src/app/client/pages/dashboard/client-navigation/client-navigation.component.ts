@@ -32,6 +32,6 @@ export class ClientNavigationComponent {
 
   logout() {
     localStorage.setItem('power-factory-client-token', '');
-    this.router.navigate(['home']);
+    this.router.navigate(['']);
   }
 }

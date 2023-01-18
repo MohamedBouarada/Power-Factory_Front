@@ -24,13 +24,18 @@ export class AdminNavigationComponent {
   ) {}
 
   navigateToRoute(route: string) {
+      if(route=="5"){
+      this.router.navigate(['']);
 
+      }else{
       this.router.navigate(['admin', route]);
+
+      }
 
   }
 
   logout() {
     localStorage.setItem('power-factory-admin-token' , '')
-    this.router.navigate(['home'])
+    this.router.navigate([''])
   }
 }

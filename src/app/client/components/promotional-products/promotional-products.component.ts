@@ -13,9 +13,9 @@ export class PromotionalProductsComponent implements OnInit {
       discount: -9,
       principaleImage: '/assets/images/products/prod-1.webp',
       otherImages: [
-        '/assets/images/post-3.jpg',
-        '/assets/images/post-4.jpg',
-        '/assets/images/post-6.jpg',
+        '/assets/images/products/prod-5.jpeg',
+        '/assets/images/products/prod-6.jpeg',
+        '/assets/images/products/prod-4.jpeg',
       ],
       rating: 5,
       oldPrice: 89,
@@ -26,9 +26,10 @@ export class PromotionalProductsComponent implements OnInit {
       discount: -9,
       principaleImage: '/assets/images/products/prod-2.webp',
       otherImages: [
-        '/assets/images/post-6.jpg',
-        '/assets/images/post-4.jpg',
-        '/assets/images/post-6.jpg',
+        '/assets/images/products/prod-1.webp',
+        '/assets/images/products/prod-4.jpeg',
+        '/assets/images/products/prod-3.webp',
+        
       ],
       rating: 0,
       oldPrice: 89,
@@ -39,9 +40,10 @@ export class PromotionalProductsComponent implements OnInit {
       discount: -9,
       principaleImage: '/assets/images/products/prod-3.webp',
       otherImages: [
-        '/assets/images/post-3.jpg',
-        '/assets/images/post-4.jpg',
-        '/assets/images/post-6.jpg',
+        '/assets/images/products/prod-4.jpeg',
+        '/assets/images/products/prod-1.webp',
+        '/assets/images/products/prod-2.webp',
+        
       ],
       rating: 5,
       oldPrice: 89,
@@ -52,9 +54,9 @@ export class PromotionalProductsComponent implements OnInit {
       discount: -9,
       principaleImage: '/assets/images/products/prod-4.jpeg',
       otherImages: [
-        '/assets/images/post-3.jpg',
-        '/assets/images/post-4.jpg',
-        '/assets/images/post-6.jpg',
+        '/assets/images/products/prod-3.webp',
+        '/assets/images/products/prod-1.webp',
+        '/assets/images/products/prod-2.webp',
       ],
       rating: 2,
       oldPrice: 89,

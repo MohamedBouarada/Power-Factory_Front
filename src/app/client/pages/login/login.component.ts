@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { ClientAuthService } from 'src/app/client-auth.service';
 import { ToastrService } from 'ngx-toastr';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,8 @@ export class LoginComponent {
     private readonly translateService: TranslateService,
     private readonly router: Router,
     private readonly clientAuthService: ClientAuthService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private _location:Location
   ) {
     this.translateService.setDefaultLang('en');
     this.translateService.use(localStorage.getItem('lang') || 'en');
@@ -43,6 +45,7 @@ export class LoginComponent {
       .subscribe({
         next: (response) => {
           console.log(response);
+          console.log(this._location)
           if (response.role == 'User') {
 
 
@@ -51,7 +54,9 @@ export class LoginComponent {
             response['access_token'].toString()
           );
           console.log(localStorage.getItem('power-factory-client-token'));
-          this.router.navigate(['client']);
+          
+          //this._location.back()
+          this.router.navigate(['store']);
         }else {
             localStorage.setItem(
               'power-factory-admin-token',
