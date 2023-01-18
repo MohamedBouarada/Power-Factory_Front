@@ -44,6 +44,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { ClientNavigationComponent } from './pages/dashboard/client-navigation/client-navigation.component';
 import { ClientOrderComponent } from './pages/dashboard/client-order/client-order.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { ClientOrderComponent } from './pages/dashboard/client-order/client-orde
     CustomerStep3Component,
     ClientNavigationComponent,
     ClientOrderComponent,
+    NotFoundComponent,
   ],
   exports: [NavbarComponent, FooterComponent,VideoComponent],
   imports: [

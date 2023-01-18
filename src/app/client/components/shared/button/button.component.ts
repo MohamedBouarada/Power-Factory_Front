@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ButtonComponent implements OnInit {
   @Input() btnName:string="";
   @Input() iconName:string="arrow_right";
+  
 
   constructor() { }
 

@@ -17,6 +17,7 @@ import { ProgramsComponent } from './client/pages/programs/programs.component';
 import { CoachesComponent } from './client/pages/coaches/coaches.component';
 import { ClientNavigationComponent } from './client/pages/dashboard/client-navigation/client-navigation.component';
 import { ClientOrderComponent } from './client/pages/dashboard/client-order/client-order.component';
+import { NotFoundComponent } from './client/pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -86,7 +87,11 @@ const routes: Routes = [
 
   { path: 'store', component: StorePageComponent },
   { path: 'product/:id', component: ProductDetailsPageComponent },
-  { path: '**', redirectTo: '/', pathMatch: 'full' },
+  {
+    path: 'notfound',
+    component: NotFoundComponent,
+  },
+  { path: '**', redirectTo: '/notfound', pathMatch: 'full' },
 ];
 
 @NgModule({

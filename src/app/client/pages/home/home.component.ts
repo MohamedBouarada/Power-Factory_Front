@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   listOfTitles: string[] = ['Be Stronger','Fitness First', 'Make It Happen ', 'Shock Everyone'];
   subTitle: string = 'Never give up';
   description: string =
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,exercitationem. Sequi alias iusto minus dicta enim vitae accusantium quas obcaecati qui odit quod error quam, illum quisquam explicabo, inventore tenetur.';
+    'Born Fitness is a big source for health and fitness. The blog aims to take the stress out of health, fitness, and nutrition. They have a no-hype, straightforward tone that delivers informative yet engaging content. Founder of Born Fitness Adam Bornstein works with world-class fitness experts to deliver clear and helpful answers.';
 
   constructor() {}
 
