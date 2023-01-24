@@ -1,27 +1,47 @@
 # PowerFactoryFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+<h1> <img src = "https://github.com/Harpia-Vieillot/Harpia-Vieillot/blob/main/resources/analytics.webp" width="7%"> Table of Contents </h1>
 
-## Development server
+  <ol>
+    <li><a href="#">About</a></li>
+    <li> <a href="#">Features</a></li>
+    <li><a href="#">Setup</a></li>
+    <li><a href="#">Demo</a></li>
+  </ol>
+  
+
+<h1> <img src = "https://github.com/Harpia-Vieillot/Harpia-Vieillot/blob/main/resources/analytics.webp" width="7%"> About </h1>
+
+The front-end of a dynamic gym website and fitness shop. 
+
+<h1> <img src = "https://github.com/Harpia-Vieillot/Harpia-Vieillot/blob/main/resources/analytics.webp" width="7%"> Features </h1>
+
+- Introduce the `Power Factory` gym 
+- Represents its programs (title , description)
+- Getting informations about sport classes in the gym (date,place,description)
+- Represents training techniques and the coaches of the gym
+- A store page that contains fitness equipement and their details
+- Order products
+- Signup /login
+
+<h1> <img src = "https://github.com/Harpia-Vieillot/Harpia-Vieillot/blob/main/resources/analytics.webp" width="7%"> Setup </h1>
+
+Clone the `Power_Factory_Front` repository locally , in terminal run :
+
+```bash
+$ git clone https://github.com/MohamedBouarada/Power-Factory_Front
+```
+
+Install dependencies :
+
+```bash
+$ npm install
+```
+
+Run the development server:
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+<h1> <img src = "https://github.com/Harpia-Vieillot/Harpia-Vieillot/blob/main/resources/analytics.webp" width="7%"> Demo </h1>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[![Demo For PowerFactory]()](https://www.youtube.com/watch?v=-TfdNBJkaoI)
