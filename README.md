@@ -24,6 +24,10 @@ The front-end of a dynamic gym website and fitness shop.
 - Order products
 - Signup /login
 
+<h1> <img src = "https://github.com/Harpia-Vieillot/Harpia-Vieillot/blob/main/resources/analytics.webp" width="7%"> Technologies used  </h1>
+
+Angular 
+
 <h1> <img src = "https://github.com/Harpia-Vieillot/Harpia-Vieillot/blob/main/resources/analytics.webp" width="7%"> Setup </h1>
 
 Clone the `Power_Factory_Front` repository locally , in terminal run :
